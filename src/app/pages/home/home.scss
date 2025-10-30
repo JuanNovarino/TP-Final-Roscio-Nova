@@ -1,0 +1,12 @@
+header {
+    background: #edb42f;
+    background: linear-gradient(90deg, rgba(237, 180, 47, 1) 0%, rgba(241, 245, 32, 1) 52%, rgba(237, 180, 47, 1) 100%); 
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    padding: 10px 40px;
+    height: 88px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+}
