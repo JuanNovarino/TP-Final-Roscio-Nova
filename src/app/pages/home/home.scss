@@ -1,12 +1,54 @@
-header {
-    background: #edb42f;
-    background: linear-gradient(90deg, rgba(237, 180, 47, 1) 0%, rgba(241, 245, 32, 1) 52%, rgba(237, 180, 47, 1) 100%); 
-    display: flex;
-    justify-content: space-between;
-    color: white;
-    padding: 10px 40px;
-    height: 88px;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-content: center;
+
+
+.app-header {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center; 
+  padding: 10px 40px; 
+  width: 100%;
+  box-sizing: border-box; 
+  background-color: #FBC240; 
+  position: fixed; 
+  top: 0;
+  left: 0;
+  z-index: 1000; 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+}
+
+.login-button {
+  display: flex;
+  align-items: center;
+  gap: 8px; 
+  background-color: #00B368;
+  color: white; 
+  padding: 8px 15px; 
+  border-radius: 20px; 
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s;
+
+  svg {
+    fill: white ; 
+    width: 18px; 
+    height: 18px;
+  }
+}
+
+.login-button:hover {
+  background-color: #008f51; 
+}
+
+
+.login-button span {
+  color: white ;
+}
+
+
+.letta-logo-img {
+  
+  height: 35px; 
+  width: auto;
+  
 }
