@@ -1,5 +1,4 @@
-/* You can add global styles to this file, and also import other style files */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+
 
 html {
     margin: 0px;
@@ -7,9 +6,9 @@ html {
 
 body {
     font-family: 'Inter', sans-serif;
-    margin: 0; /* <-- ¡Esta es la regla que quita los bordes! */
+    margin: 0;
     padding: 0;
-    background-color: #FBC240; /* El color de fondo de la app */
+
     color: #333;
     line-height: 1.6;
 }

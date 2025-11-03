@@ -3,6 +3,7 @@ import { LoginPage } from './pages/login-page/login-page';
 import path from 'path';
 import { Component } from '@angular/core';
 import { Home } from './pages/home/home';
+import { RegisterPage } from './pages/register-page/register-page';
 
 export const routes: Routes = [
     {
@@ -12,6 +13,10 @@ export const routes: Routes = [
     {
       path: "login",
       component : LoginPage,
+    },
+    {
+      path : "register",
+      component : RegisterPage,
     },
 ];
 
