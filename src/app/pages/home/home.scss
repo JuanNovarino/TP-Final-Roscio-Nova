@@ -1,5 +1,4 @@
 
-
 .app-header {
   display: flex;
   justify-content: space-between; 
@@ -30,7 +29,7 @@
   transition: background-color 0.2s;
 
   svg {
-    fill: white ; 
+    fill: white; 
     width: 18px; 
     height: 18px;
   }
@@ -40,15 +39,83 @@
   background-color: #008f51; 
 }
 
-
 .login-button span {
-  color: white ;
+  color: white;
+}
+
+.letta-logo-img {
+  height: 35px; 
+  width: auto;
+}
+
+:host {
+  display: block;
+  width: 100%;
+  height: 100vh; 
+  overflow: hidden; 
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.hero-container {
+  width: 100%;
+  height: 100%; 
+  display: flex;
+  flex-direction: column;
 }
 
 
-.letta-logo-img {
-  
-  height: 35px; 
-  width: auto;
-  
+.hero-top {
+  background-color: #FBC240;
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  box-sizing: border-box;
+  position: relative;
+  padding-top: 60px;
+}
+
+.hero-content {
+  text-align: center;
+  z-index: 1;
+  max-width: 600px;
+}
+
+.hero-title {
+  color: #1A1A1A;
+  font-size: 3.5rem; 
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0;
+}
+
+
+.hero-curve {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.hero-curve svg {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 80px; 
+}
+
+.hero-curve .shape-fill {
+  fill: #FFFFFF; 
+}
+
+
+.hero-bottom {
+  background-color: #FFFFFF;
+  height: 40vh;
 }
