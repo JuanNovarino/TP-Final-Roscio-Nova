@@ -1,45 +1,43 @@
 
+<div class="color login-container">
 
+    <div class="login-box">
+        
+        <h2 class="login-title">Iniciar Sesión</h2>
+    
+        <form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+        
+            <div class="form-group">
+                    <label for="restaurantName" class="form-label">Nombre del Restaurante</label>
+                    <input id="restaurantName" name="restaurantName" type="text" class="form-input" ngModel #restaurantName="ngModel" required="true" autocomplete="organization">
+                    
+                    @if (restaurantName.invalid && !restaurantName.pristine) {
+                        <p class="error-text">Debe colocar el nombre de su restaurante.</p>
+                    }
+            </div>
 
-<body>
-
-    <main class="login-container">
-        <div class="login-box">
-            
-            <h2 class="login-title">Iniciar Sesión</h2>
-            
-            <form action="#" method="POST">
-                
-                
-                <div class="form-group">
-                    <label for="username" class="form-label">Usuario</label>
-                    <input id="username" name="username" type="text" required class="form-input" placeholder="User">
-                </div>
-                
-                
-                <div class="form-group">
+            <div class="form-group">
                     <label for="password" class="form-label">Contraseña</label>
-                    <input id="password" name="password" type="password" required class="form-input" placeholder="••••••••">
-                </div>
-                
-               
-                
-                
-                <div class="form-group">
-                    <button type="submit" class="btn btn-primary">
-                        Ingresar
-                    </button>
-                </div>
-            </form>
+                    <input id="password" name="password" type="password" class="form-input" ngModel #password="ngModel" minlength="4" autocomplete="current-password">
+                    
+                    @if (password.invalid && !password.pristine) {
+                        <p class="error-text">Debe colocar una contraseña de al menos 4 caracteres.</p>
+                    }
+            </div>
 
-                <p class="register-link">No tenés cuenta? <a routerLink="/register">Registrate</a></p>
+            <button class="btn btn-primary" [disabled]="loginForm.invalid">Inicar Sesion</button>
 
-            
+            @if (errorLogin) {
+                    <p class="error-text" style="text-align: center; margin-top: 1rem;">Error al inicar sesión. Revise sus datos.</p>
+                } 
 
-        </div>
-    </main>
+        </form>
+        <p class="register-link">No tenés cuenta? <a routerLink="/register">Registrate</a></p>
+    </div>
 
-</body>
+    
+
+</div>
 
 
 
