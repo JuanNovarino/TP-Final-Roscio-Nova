@@ -4,6 +4,8 @@ import path from 'path';
 import { Component } from '@angular/core';
 import { Home } from './pages/home/home';
 import { RegisterPage } from './pages/register-page/register-page';
+import { AdminLayout } from './components/admin-layout/admin-layout';
+import { ProductList } from './component/product-list/product-list';
 
 export const routes: Routes = [
     {
@@ -17,6 +19,23 @@ export const routes: Routes = [
     {
       path : "register",
       component : RegisterPage,
+    },
+
+    {
+      path: "admin",
+      component: AdminLayout,
+      
+       children: [
+           
+            { path: "", redirectTo: "productos", pathMatch: "full" }, 
+            
+            { path: "productos", component: ProductList }, 
+            
+            
+            //{ path: "categorias", component: CategoryListComponent },
+
+           
+        ]
     },
 ];
 
