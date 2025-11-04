@@ -62,7 +62,7 @@
             
             <div class="form-group">
                 <label for="password" class="form-label">Contraseña</label>
-                <input id="password" name="password" type="password" class="form-input" ngModel #password="ngModel" minlength="4" autocomplete="new-password">
+                <input id="password" name="password" type="password" class="form-input" ngModel #password="ngModel" minlength="4" autocomplete="current-password">
                 
                 @if (password.invalid && !password.pristine) {
                     <p class="error-text">Debe colocar una contraseña de al menos 4 caracteres.</p>
@@ -72,7 +72,7 @@
             
             <div class="form-group">
                 <label for="password2" class="form-label">Repite la contraseña</label>
-                <input id="password2" name="password2" type="password" class="form-input" ngModel #password2="ngModel" minlength="4" autocomplete="new-password">
+                <input id="password2" name="password2" type="password" class="form-input" ngModel #password2="ngModel" minlength="4" autocomplete="current-password">
                 
                 
                 @if (password2.invalid && !password2.pristine) { 

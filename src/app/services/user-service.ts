@@ -7,7 +7,7 @@ import { NewUser } from '../interfaces/user';
 export class UserService {
 
   async registro(registerData:NewUser){
-    return await fetch ("https://restaurant-api.somee.com/api/users",
+    return await fetch ("https://w370351.ferozo.com/api/users",
       {
         method: "POST",
         headers:{
