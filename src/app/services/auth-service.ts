@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 export class AuthService implements OnInit {
   
   router = inject(Router);
-  token : null|string = localStorage.getItem("token");
+  token : null|string = null; //Se renderiza
   revisionTokenInterval: number | undefined;
 
   ngOnInit(): void {
@@ -36,7 +36,7 @@ export class AuthService implements OnInit {
   logout(){
     this.token = null;
     localStorage.removeItem("token");
-    this.router.navigate(["/login"])
+    this.router.navigate(["/"])
   }
 
   revisionToken() {
