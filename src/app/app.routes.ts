@@ -6,6 +6,7 @@ import { Home } from './pages/home/home';
 import { RegisterPage } from './pages/register-page/register-page';
 import { AdminLayout } from './components/admin-layout/admin-layout';
 import { ProductList } from './component/product-list/product-list';
+import { MyProfile } from './components/my-profile/my-profile';
 
 export const routes: Routes = [
     {
@@ -30,13 +31,19 @@ export const routes: Routes = [
             { path: "", redirectTo: "productos", pathMatch: "full" }, 
             
             { path: "productos", component: ProductList }, 
-            
-            
+
+            {
+              path: "myprofile",
+              component : MyProfile
+            },
+                        
             //{ path: "categorias", component: CategoryListComponent },
 
            
         ]
-    },
+  },
+
+  
 ];
 
 

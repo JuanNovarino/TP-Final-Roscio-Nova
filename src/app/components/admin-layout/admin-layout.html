@@ -12,8 +12,8 @@
         <nav class="sidebar-nav">
           <ul>
             <li>
-              <a href="#">
-                <span>Inicio</span>
+              <a routerLink="/admin/myprofile">
+                <span>Mi Perfil</span>
               </a>
             </li>
             <li>
@@ -35,12 +35,17 @@
           <span>Cerrar sesión</span>
         </button>
       </div>
+
+      
+      
     </div>
 
-    <div class="main-content">
-        <h2>Aca me gustaria poner una Bienvenida</h2>
+
+    <main class="main-content">
         
-    </div>
+        <router-outlet></router-outlet>
+
+    </main>
 
 </body>
 
