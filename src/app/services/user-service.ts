@@ -23,6 +23,7 @@ export class UserService {
       Authorization: "Bearer " + this.authService.token,  
     }
   });
+  if (!res.ok) return undefined; ////
   const user = await res.json()
   return user
 }
