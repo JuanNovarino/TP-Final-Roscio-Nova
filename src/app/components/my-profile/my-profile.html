@@ -33,7 +33,7 @@
 
                 
                 <div class="grupo-botones">
-                    <!--a [routerLink]="['/contacts',idContacto(),'edit']">Editar</a-->
+                    <a [routerLink]="['/admin/myprofile', userProfile.id, 'edit']">Editar</a>
                     <button (click)="deleteUser()" class="action-btn delete-btn">Eliminar</button>
                 </div>
 

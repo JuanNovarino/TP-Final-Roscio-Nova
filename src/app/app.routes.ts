@@ -7,6 +7,7 @@ import { RegisterPage } from './pages/register-page/register-page';
 import { AdminLayout } from './components/admin-layout/admin-layout';
 import { ProductList } from './component/product-list/product-list';
 import { MyProfile } from './components/my-profile/my-profile';
+import { EditUser } from './components/edit-user/edit-user';
 
 export const routes: Routes = [
     {
@@ -34,11 +35,12 @@ export const routes: Routes = [
 
             {
               path: "myprofile",
-              component : MyProfile
+              component : MyProfile,
             },
 
             {
-              path: "myprofile/"
+              path: "myprofile/:idUser/edit",
+              component: EditUser,
             }
                         
             //{ path: "categorias", component: CategoryListComponent },
