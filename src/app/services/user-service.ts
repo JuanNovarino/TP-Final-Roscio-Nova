@@ -36,6 +36,8 @@ async getUsers (){
   const user = await res.json()
   return user 
 }
+
+
 async deleteUser(id: number) {
         const res = await fetch(`https://w370351.ferozo.com/api/users/`+ id, {
             method: "DELETE",
