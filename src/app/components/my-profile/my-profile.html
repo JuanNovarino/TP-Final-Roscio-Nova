@@ -1,44 +1,43 @@
-<div id="contenedor">
+@if(cargandoPerfil){
+  <p class="loading-message">Cargando perfil...</p>
+} @else if (!userProfile) {
+  <p class="error-message">No se encontró el perfil.</p>
+} @else {
 
-    @if(cargandoPerfil){
-    <p>cargando contacto</p>
-    } @else if (!userProfile) {no se encontro perfil}
-    @else {
+<div class="profile-card">
 
+  <div class="profile-initial-circle">
+    {{ userProfile!.restaurantName.charAt(0).toUpperCase() }}
+  </div>
 
-    <div class="tarjeta-perfil">
+  <h1 class="profile-name">{{userProfile!.firstName}} {{userProfile!.lastName}}</h1>
 
+  <div class="profile-info">
+    <p>
+      <strong>Restaurante:</strong>
+      {{userProfile.restaurantName}}
+    </p>
+    <p>
+      <strong>Dirección:</strong>
+      {{userProfile.address}}
+    </p>
+    <p>
+      <strong>Teléfono:</strong>
+      {{userProfile.phoneNumber}}
+    </p>
+  </div>
 
-        <div class="cont-imagen">
+  <div class="profile-actions">
+    
+    <a [routerLink]="['/admin/myprofile', userProfile.id, 'edit']" class="btn btn-primary">
+      Editar
+    </a>
+    
+    <button (click)="deleteUser()" class="btn btn-danger">
+      Eliminar
+    </button>
+    
+  </div>
 
-            <!--img 
-                        src="https://placehold.co/100x100/5d3a9b/ffffff/png?text={{userProfile!.restaurantName.charAt(0)}}" 
-                        alt="{{userProfile!.restaurantName}} Profile" 
-                        class="redondeado-imagen"
-                    /-->
-        </div>
-
-
-        <h1 class="nombre-cont">{{userProfile!.firstName}} {{userProfile!.lastName}}</h1>
-
-
-        <div class="info-cont">
-
-            <p><span>Restaurante: {{userProfile.restaurantName}}</span></p>
-            <p><span>Dirección: {{userProfile.address}}</span></p>
-            <p><span>Teléfono: {{userProfile.phoneNumber}}</span></p>
-
-        </div>
-
-
-        <div class="grupo-botones">
-            <a [routerLink]="['/admin/myprofile', userProfile.id, 'edit']">Editar</a>
-            <button (click)="deleteUser()" class="action-btn delete-btn">Eliminar</button>
-        </div>
-
-
-
-
-    </div>
-    }
 </div>
+}

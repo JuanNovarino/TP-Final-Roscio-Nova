@@ -1,60 +1,55 @@
 <div class="login-container color">
-    <section class="login-box">
+  <section class="login-box">
+    <h2 class="login-title">Editar Mi Perfil</h2>
 
-        <h2 class="login-title">Editar Mi Perfil</h2>
+    <form (ngSubmit)="handleFormSubmission(newProfileForm)" #newProfileForm="ngForm">
+
+      <div class="form-group">
+        <label for="restaurant-name" class="form-label">Nombre del Restaurante*</label>
+        <input id="restaurant-name" name="restaurantName" type="text" ngModel required="true" minlength="2" maxlength="50" #restaurantName="ngModel" class="form-input">
         
-        
-        <form (ngSubmit)="handleFormSubmission(newProfileForm)" #newProfileForm="ngForm">
-        
-        
-            
-        <div class="form-group">
-        <label for="restaurant-name">Nombre del Restaurante*</label>
-        <input id="restaurant-name" name="restaurantName" type="text" ngModel required="true" minlength="2" maxlength="50" #restaurantName="ngModel">
         @if (restaurantName.dirty && restaurantName.invalid) {
         <p class="error">El nombre del restaurante es obligatorio y necesita al menos 2 caracteres.</p>
         }
-        </div>
-            
-        <div class="form-group">
-        <label for="first-name">Nombre*</label>
-        <input id="first-name" name="firstName" type="text" ngModel required="true" minlength="2" maxlength="20" #firstName="ngModel">
+      </div>
+
+      <div class="form-group">
+        <label for="first-name" class="form-label">Nombre*</label>
+        <input id="first-name" name="firstName" type="text" ngModel required="true" minlength="2" maxlength="20" #firstName="ngModel" class="form-input">
+        
         @if (firstName.dirty && firstName.invalid) {
         <p class="error">El nombre es obligatorio y no puede ser una sola letra</p>
         }
-        </div>
-            
-        <div class="form-group">
-        <label for="last-name">Apellido*</label>
-        <input id="last-name" name="lastName" type="text" ngModel required="true" maxlength="20">
-        </div>
-            
-        <div class="form-group">
-        <label for="phone">Teléfono*</label>
-        <input id="phone" name="phoneNumber" type="text" ngModel required="true" minlength="3" maxlength="30">
-        </div>
-            
-        <div class="form-group">
-        <label for="address">Dirección*</label>
-        <input id="address" name="address" type="text" ngModel required="true" minlength="5">
-        </div>
-            
-        <div class="form-group">
-        <label for="password">Contraseña (Necesario para Guardar)*</label>
-        <input id="password" name="password" type="password" ngModel required="true">
-        </div>
-            
+      </div>
 
+      <div class="form-group">
+        <label for="last-name" class="form-label">Apellido*</label>
+        <input id="last-name" name="lastName" type="text" ngModel required="true" maxlength="20" class="form-input">
+      </div>
 
-        @if (errorEnBack) {
-        <p class="error">Error al conectar con el servidor, intente nuevamente.</p>
-        } 
+      <div class="form-group">
+        <label for="phone" class="form-label">Teléfono*</label>
+        <input id="phone" name="phoneNumber" type="text" ngModel required="true" minlength="3" maxlength="30" class="form-input">
+      </div>
 
-        <button [disabled]="newProfileForm.invalid || isSubmitting" class="btn btn-primary">
-                {{ isSubmitting ? 'Guardando...' : 'Editar' }}
-            </button>
-        </form>
-    </section>
-    
+      <div class="form-group">
+        <label for="address" class="form-label">Dirección*</label>
+        <input id="address" name="address" type="text" ngModel required="true" minlength="5" class="form-input">
+      </div>
+
+      <div class="form-group">
+        <label for="password" class="form-label">Contraseña (Necesario para Guardar)*</label>
+        <input id="password" name="password" type="password" ngModel required="true" class="form-input">
+      </div>
+
+      @if (errorEnBack) {
+      <p class="error">Error al conectar con el servidor, intente nuevamente.</p>
+      }
+
+      <button [disabled]="newProfileForm.invalid || isSubmitting" class="btn btn-primary">
+        {{ isSubmitting ? 'Guardando...' : 'Editar' }}
+      </button>
+    </form>
+  </section>
 </div>
     
