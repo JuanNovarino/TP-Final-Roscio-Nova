@@ -45,11 +45,12 @@ export class MyProfile implements OnInit {
   async deleteUser(){
     if(this.userProfile){
 
-       if (!confirm(`¿Estás seguro de que quieres eliminar la cuenta? Esta acción es irreversible.`)) {
-            return;
-        }
+       //if (!confirm(`¿Estás seguro de que quieres eliminar la cuenta? Esta acción es irreversible.`)) {
+         //   return;
+       // }
 
       const res = await this.userService.deleteUser(this.userProfile.id);
+      console.log("ID de usuario a eliminar:", this.userProfile.id);
       if(res) {
             alert('Cuenta eliminada con éxito.');
             this.authService.logout(); 

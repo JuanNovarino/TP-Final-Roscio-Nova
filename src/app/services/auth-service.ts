@@ -10,6 +10,7 @@ export class AuthService implements OnInit {
   router = inject(Router);
   token : null|string = null; //Se renderiza
   revisionTokenInterval: number | undefined;
+  id : number | undefined = undefined ;
 
   ngOnInit(): void {
     
@@ -29,6 +30,7 @@ export class AuthService implements OnInit {
     if(res.ok){
       this.token = await res.text()
       localStorage.setItem("token",this.token);
+      this.id =this.getUserId();
       this.router.navigate(["/admin"])
     }
   }
