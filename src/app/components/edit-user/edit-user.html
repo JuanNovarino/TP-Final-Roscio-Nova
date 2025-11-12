@@ -1,58 +1,60 @@
-<div class="contenedor-tarjeta">
- <h2>Editar Mi Perfil</h2>
- 
-  
- <form (ngSubmit)="handleFormSubmission(newProfileForm)" #newProfileForm="ngForm">
-   
-  
-    
- <div>
- <label for="restaurant-name">Nombre del Restaurante*</label>
- <input id="restaurant-name" name="restaurantName" type="text" ngModel required="true" minlength="2" maxlength="50" #restaurantName="ngModel">
- @if (restaurantName.dirty && restaurantName.invalid) {
- <p class="error">El nombre del restaurante es obligatorio y necesita al menos 2 caracteres.</p>
- }
- </div>
-    
- <div>
- <label for="first-name">Nombre*</label>
- <input id="first-name" name="firstName" type="text" ngModel required="true" minlength="2" maxlength="20" #firstName="ngModel">
- @if (firstName.dirty && firstName.invalid) {
- <p class="error">El nombre es obligatorio y no puede ser una sola letra</p>
- }
- </div>
-    
- <div>
- <label for="last-name">Apellido*</label>
- <input id="last-name" name="lastName" type="text" ngModel required="true" maxlength="20">
- </div>
-    
- <div>
- <label for="phone">Teléfono*</label>
- <input id="phone" name="phoneNumber" type="text" ngModel required="true" minlength="3" maxlength="30">
- </div>
-    
- <div>
- <label for="address">Dirección*</label>
- <input id="address" name="address" type="text" ngModel required="true" minlength="5">
- </div>
-    
- <div>
- <label for="password">Contraseña (Necesario para Guardar)*</label>
- 
-       
-      
- <input id="password" name="password" type="password" ngModel required="true">
- </div>
-    
+<div class="login-container color">
+    <section class="login-box">
+
+        <h2 class="login-title">Editar Mi Perfil</h2>
+        
+        
+        <form (ngSubmit)="handleFormSubmission(newProfileForm)" #newProfileForm="ngForm">
+        
+        
+            
+        <div class="form-group">
+        <label for="restaurant-name">Nombre del Restaurante*</label>
+        <input id="restaurant-name" name="restaurantName" type="text" ngModel required="true" minlength="2" maxlength="50" #restaurantName="ngModel">
+        @if (restaurantName.dirty && restaurantName.invalid) {
+        <p class="error">El nombre del restaurante es obligatorio y necesita al menos 2 caracteres.</p>
+        }
+        </div>
+            
+        <div class="form-group">
+        <label for="first-name">Nombre*</label>
+        <input id="first-name" name="firstName" type="text" ngModel required="true" minlength="2" maxlength="20" #firstName="ngModel">
+        @if (firstName.dirty && firstName.invalid) {
+        <p class="error">El nombre es obligatorio y no puede ser una sola letra</p>
+        }
+        </div>
+            
+        <div class="form-group">
+        <label for="last-name">Apellido*</label>
+        <input id="last-name" name="lastName" type="text" ngModel required="true" maxlength="20">
+        </div>
+            
+        <div class="form-group">
+        <label for="phone">Teléfono*</label>
+        <input id="phone" name="phoneNumber" type="text" ngModel required="true" minlength="3" maxlength="30">
+        </div>
+            
+        <div class="form-group">
+        <label for="address">Dirección*</label>
+        <input id="address" name="address" type="text" ngModel required="true" minlength="5">
+        </div>
+            
+        <div class="form-group">
+        <label for="password">Contraseña (Necesario para Guardar)*</label>
+        <input id="password" name="password" type="password" ngModel required="true">
+        </div>
+            
 
 
- @if (errorEnBack) {
- <p class="error">Error al conectar con el servidor, intente nuevamente.</p>
- } 
+        @if (errorEnBack) {
+        <p class="error">Error al conectar con el servidor, intente nuevamente.</p>
+        } 
 
- <button [disabled]="newProfileForm.invalid || isSubmitting">
-        {{ isSubmitting ? 'Guardando...' : 'Editar' }}
-    </button>
- </form>
+        <button [disabled]="newProfileForm.invalid || isSubmitting" class="btn btn-primary">
+                {{ isSubmitting ? 'Guardando...' : 'Editar' }}
+            </button>
+        </form>
+    </section>
+    
 </div>
+    
