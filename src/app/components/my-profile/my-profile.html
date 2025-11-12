@@ -1,45 +1,44 @@
-
 <div id="contenedor">
-    
+
     @if(cargandoPerfil){
-        <p>cargando contacto</p>
+    <p>cargando contacto</p>
     } @else if (!userProfile) {no se encontro perfil}
     @else {
-   
-        
-        <div class="tarjeta-perfil">
-            
-                
-                <div class="cont-imagen">
-                    
-                    <!--img 
+
+
+    <div class="tarjeta-perfil">
+
+
+        <div class="cont-imagen">
+
+            <!--img 
                         src="https://placehold.co/100x100/5d3a9b/ffffff/png?text={{userProfile!.restaurantName.charAt(0)}}" 
                         alt="{{userProfile!.restaurantName}} Profile" 
                         class="redondeado-imagen"
                     /-->
-                </div>
-                
-                
-                <h1 class="nombre-cont">{{userProfile!.firstName}} {{userProfile!.lastName}}</h1>
-                
-                
-                <div class="info-cont">
-                    
-                    <p><span>Restaurante: {{userProfile.restaurantName}}</span></p>
-                    <p><span>Dirección: {{userProfile.address}}</span></p>
-                    <p><span>Teléfono: {{userProfile.phoneNumber}}</span></p>
-                    
-                </div>
-
-                
-                <div class="grupo-botones">
-                    <a [routerLink]="['/admin/myprofile', userProfile.id, 'edit']">Editar</a>
-                    <button (click)="deleteUser()" class="action-btn delete-btn">Eliminar</button>
-                </div>
-
-     
-            
-          
         </div>
+
+
+        <h1 class="nombre-cont">{{userProfile!.firstName}} {{userProfile!.lastName}}</h1>
+
+
+        <div class="info-cont">
+
+            <p><span>Restaurante: {{userProfile.restaurantName}}</span></p>
+            <p><span>Dirección: {{userProfile.address}}</span></p>
+            <p><span>Teléfono: {{userProfile.phoneNumber}}</span></p>
+
+        </div>
+
+
+        <div class="grupo-botones">
+            <a [routerLink]="['/admin/myprofile', userProfile.id, 'edit']">Editar</a>
+            <button (click)="deleteUser()" class="action-btn delete-btn">Eliminar</button>
+        </div>
+
+
+
+
+    </div>
     }
 </div>
