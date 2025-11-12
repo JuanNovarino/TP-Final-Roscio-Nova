@@ -36,6 +36,10 @@ export const routes: Routes = [
               path: "myprofile",
               component : MyProfile
             },
+
+            {
+              path: "myprofile/"
+            }
                         
             //{ path: "categorias", component: CategoryListComponent },
 

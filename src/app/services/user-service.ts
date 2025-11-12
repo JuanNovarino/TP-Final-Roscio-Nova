@@ -44,7 +44,7 @@ async deleteUser(id: number) {
         console.log("ID de usuario a eliminar:", id);
 
         
-        const res = await fetch(`https://w370351.ferozo.com/api/users/`+ id, {
+        const res = await fetch(`https://w370351.ferozo.com/api/users/${id}`,{
             method: "DELETE",
             headers: {
                 Authorization: "Bearer " + this.authService.token,
