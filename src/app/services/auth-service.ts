@@ -12,7 +12,10 @@ export class AuthService{
   revisionTokenInterval: number | undefined;
   id: number | undefined = undefined;
 
-  
+  getToken(): string | null {
+    if (!this.token) this.token = localStorage.getItem("token");
+    return this.token;
+  }
 
   async login(loginData: LoginData) {
     const res = await fetch("https://w370351.ferozo.com/api/Authentication/login",
@@ -42,9 +45,9 @@ export class AuthService{
   }
 
   getUserId() {
-    this.token = localStorage.getItem("token"); //
-    if (!this.token) return;
-    return parseInt(this.parseJwt(this.token).sub);
+    const currentToken = this.getToken();
+    if (!currentToken) return;
+    return parseInt(this.parseJwt(currentToken).sub);
   }
 
   logout() {

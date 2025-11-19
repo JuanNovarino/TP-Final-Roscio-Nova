@@ -20,7 +20,7 @@ export class UserService {
   }
   async getUserbyid (id:number|undefined){const res = await fetch(`https://w370351.ferozo.com/api/users/${id}`,{
     headers:{
-      Authorization: "Bearer " + this.authService.token,  
+      Authorization: "Bearer " + this.authService.getToken(),  
     }
   });
   if (!res.ok) return undefined; ////
@@ -30,7 +30,7 @@ export class UserService {
 async getUsers (){
   const res = await fetch(`https://w370351.ferozo.com/api/users/`,{
     headers:{
-      Authorization: "Bearer " + this.authService.token,  
+      Authorization: "Bearer " + this.authService.getToken(),  
     }
   });
   if (res.ok) {
@@ -45,14 +45,14 @@ async getUsers (){
 async deleteUser(id: number) {
 
        
-        console.log("Token", this.authService.token);
+        console.log("Token", this.authService.getToken());
         console.log("ID de usuario a eliminar:", id);
 
         
         const res = await fetch(`https://w370351.ferozo.com/api/users/${id}`,{
             method: "DELETE",
             headers: {
-                Authorization: "Bearer " + this.authService.token,
+                Authorization: "Bearer " + this.authService.getToken(),
             },
         });
         if (!res.ok) return false;
@@ -64,7 +64,7 @@ async deleteUser(id: number) {
               method: "PUT",
               headers: {
                   "Content-Type": "application/json",
-                  Authorization: "Bearer " + this.authService.token,
+                  Authorization: "Bearer " + this.authService.getToken(),
               },
               body: JSON.stringify(userEdit)
           });

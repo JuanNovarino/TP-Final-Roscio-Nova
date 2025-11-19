@@ -14,7 +14,7 @@ export class RestaurantService {
     const res = await fetch(this.URL_BASE,
       {
         headers:{
-          Authorization: "Bearer ", //+this.authService.token
+          Authorization: "Bearer ", //+this.authService.getToken()
         }
       }
     )

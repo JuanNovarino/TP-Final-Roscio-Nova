@@ -17,7 +17,7 @@ export class ProductService {
     const res = await fetch( this.URL_BASE + "/me", {
 
       headers: {
-        Authorization : "Bearer" + this.authService.token,
+        Authorization : "Bearer" + this.authService.getToken(),
       },
     });
     if (!res.ok) return undefined;
@@ -29,7 +29,7 @@ export class ProductService {
   async getProductsByUserId(userId : string | number){
         const res = await fetch(`https://w370351.ferozo.com/api/users/${userId}/products`, {
              headers: {
-                Authorization: "Bearer " + this.authService.token,
+                Authorization: "Bearer " + this.authService.getToken(),
             },
         });
         if (!res.ok) return undefined;
@@ -40,7 +40,7 @@ export class ProductService {
   async getProductById(id: number | string) {
         const res = await fetch(this.URL_BASE + "/" + id, {
             headers: {
-                Authorization: "Bearer " + this.authService.token,
+                Authorization: "Bearer " + this.authService.getToken(),
             },
         });
         if (!res.ok) return undefined;
@@ -53,7 +53,7 @@ export class ProductService {
             method: "POST",
             headers: {
                 "Content-Type": "application/json", 
-                Authorization: "Bearer " + this.authService.token,
+                Authorization: "Bearer " + this.authService.getToken(),
             },
             body: JSON.stringify(newProduct)
         });
@@ -68,7 +68,7 @@ export class ProductService {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",
-                Authorization: "Bearer " + this.authService.token,
+                Authorization: "Bearer " + this.authService.getToken(),
             },
             body: JSON.stringify(productEdit)
         });
@@ -85,7 +85,7 @@ export class ProductService {
         const res = await fetch(this.URL_BASE + "/" + id, {
             method: "DELETE",
             headers: {
-                Authorization: "Bearer " + this.authService.token,
+                Authorization: "Bearer " + this.authService.getToken(),
             },
         });
         if (!res.ok) return false;
@@ -97,7 +97,7 @@ export class ProductService {
         const res = await fetch(this.URL_BASE + "/" + id + "/happyHour", {
             method: "PUT",
             headers: {
-                Authorization: "Bearer " + this.authService.token,
+                Authorization: "Bearer " + this.authService.getToken(),
             },
         });
         if (!res.ok) return undefined;
@@ -115,7 +115,7 @@ export class ProductService {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json", 
-                Authorization: "Bearer " + this.authService.token,
+                Authorization: "Bearer " + this.authService.getToken(),
             },
             body: JSON.stringify({ discount: discountValue }) 
         });

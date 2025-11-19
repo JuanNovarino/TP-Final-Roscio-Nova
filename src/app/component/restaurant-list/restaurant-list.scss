@@ -1,0 +1,28 @@
+.restaurant-card-item {
+    background-color: white;
+    border-radius: 12px; 
+    padding: 20px;
+    margin-bottom: 20px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    min-height: 70px;
+}
+
+
+.restaurant-card-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+}
+
+
+.restaurant-name-text {
+    font-size: 1.4em;
+    font-weight: 700;
+    color: #333;
+    margin: 0;
+    border-left: 5px solid #ffc400; 
+    padding-left: 15px;
+}

@@ -19,7 +19,7 @@ export class CategoryService {
   async getCategoriesByUserId(userId : string | number){
           const res = await fetch(`https://w370351.ferozo.com/api/users/${userId}/categories`, {
                headers: {
-                  Authorization: "Bearer " + this.authService.token,
+                  Authorization: "Bearer " + this.authService.getToken(),
               },
           });
           if (!res.ok) return undefined;
@@ -32,7 +32,7 @@ export class CategoryService {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json", 
-                    Authorization: "Bearer " + this.authService.token,
+                    Authorization: "Bearer " + this.authService.getToken(),
                 },
                 body: JSON.stringify(newcategory)
             });
@@ -56,7 +56,7 @@ export class CategoryService {
         const res = await fetch(this.URL_BASE + "/" + id, {
             method: "DELETE",
             headers: {
-                Authorization: "Bearer " + this.authService.token,
+                Authorization: "Bearer " + this.authService.getToken(),
             },
         });
         if (!res.ok) return false;
@@ -77,7 +77,7 @@ export class CategoryService {
               method: "PUT",
               headers: {
                   "Content-Type": "application/json",
-                  Authorization: "Bearer " + this.authService.token,
+                  Authorization: "Bearer " + this.authService.getToken(),
               },
               body: JSON.stringify(categoryEdit)
           });
