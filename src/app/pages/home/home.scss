@@ -1,121 +1,127 @@
 
 .app-header {
-  display: flex;
-  justify-content: space-between; 
-  align-items: center; 
-  padding: 10px 40px; 
-  width: 100%;
-  box-sizing: border-box; 
-  background-color: #FBC240; 
-  position: fixed; 
-  top: 0;
-  left: 0;
-  z-index: 1000; 
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+ display: flex;
+ justify-content: space-between; 
+ align-items: center; 
+ padding: 10px 40px; 
+ width: 100%;
+ box-sizing: border-box; 
+ background-color: #FBC240; 
+ position: fixed; 
+ top: 0;
+ left: 0;
+ z-index: 1000; 
+ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
 }
 
 .login-button {
-  display: flex;
-  align-items: center;
-  gap: 8px; 
-  background-color: #00B368;
-  color: white; 
-  padding: 8px 15px; 
-  border-radius: 20px; 
-  text-decoration: none;
-  font-size: 0.95rem;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.2s;
+ display: flex;
+ align-items: center;
+ gap: 8px; 
+ background-color: #00B368;
+ color: white; 
+ padding: 8px 15px; 
+ border-radius: 20px; 
+ text-decoration: none;
+ font-size: 0.95rem;
+ font-weight: bold;
+ cursor: pointer;
+ transition: background-color 0.2s;
 
-  svg {
-    fill: white; 
-    width: 18px; 
-    height: 18px;
-  }
+ svg {
+  fill: white; 
+ width: 18px; 
+ height: 18px;
+ }
 }
 
 .login-button:hover {
-  background-color: #008f51; 
+ background-color: #008f51; 
 }
 
 .login-button span {
-  color: white;
+ color: white;
 }
 
 .letta-logo-img {
-  height: 35px; 
-  width: auto;
+ height: 35px; 
+ width: auto;
 }
 
 :host {
-  display: block;
-  width: 100%;
-  height: 100vh; 
-  overflow: hidden; 
-  font-family: 'Inter', sans-serif;
-  margin: 0;
-  padding: 0;
+ display: block;
+ width: 100%;
+ 
+ height: auto; 
+ min-height: 100vh; 
+ overflow-x: hidden; 
+
+ font-family: 'Inter', sans-serif;
+ margin: 0;
+ padding: 0;
 }
 
 .hero-container {
-  width: 100%;
-  height: 100%; 
-  display: flex;
-  flex-direction: column;
+ width: 100%;
+ 
+ height: auto; 
+ display: flex;
+ flex-direction: column;
 }
 
 
 .hero-top {
-  background-color: #FBC240;
-  height: 60vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 2rem;
-  box-sizing: border-box;
-  position: relative;
-  padding-top: 60px;
+ background-color: #FBC240;
+ height: 60vh; 
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ padding: 2rem;
+ box-sizing: border-box;
+ position: relative;
+ padding-top: 60px;
 }
 
 .hero-content {
-  text-align: center;
-  z-index: 1;
-  max-width: 600px;
+ text-align: center;
+ z-index: 1;
+ max-width: 600px;
 }
 
 .hero-title {
-  color: #1A1A1A;
-  font-size: 3.5rem; 
-  font-weight: 700;
-  line-height: 1.2;
-  margin: 0;
+ color: #1A1A1A;
+ font-size: 3.5rem; 
+ font-weight: 700;
+ line-height: 1.2;
+ margin: 0;
 }
 
 
 .hero-curve {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  overflow: hidden;
-  line-height: 0;
-  transform: rotate(180deg);
+ position: absolute;
+ bottom: 0;
+ left: 0;
+ width: 100%;
+ overflow: hidden;
+ line-height: 0;
+ transform: rotate(180deg);
 }
 
 .hero-curve svg {
-  position: relative;
-  display: block;
-  width: 100%;
-  height: 80px; 
+ position: relative;
+ display: block;
+ width: 100%;
+ height: 80px; 
 }
 
 .hero-curve .shape-fill {
-  fill: white; 
+ fill: white; 
 }
 
 
 .hero-bottom {
-  background-color: white;
-  height: 40vh;
+ background-color: white;
+ height: auto; 
+  padding: 40px; 
+  flex-grow: 1; 
 }

@@ -33,10 +33,26 @@
   </div>
 
   
+
+  
   <div class="hero-bottom">
-    
-  </div>
+     <div>
+        <h3>Listado de Restaurantes</h3>
+        <div>
+            @for (individualRestaurant of userService.users; track $index) {
+            <div>
+                <app-restaurant-list [restaurant]="individualRestaurant"></app-restaurant-list>
+            </div>
+            }
+        </div>
+    </div>
 </div>
+
+
+   
+
+       
+    
 
     
   

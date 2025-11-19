@@ -33,8 +33,13 @@ async getUsers (){
       Authorization: "Bearer " + this.authService.token,  
     }
   });
-  const user = await res.json()
-  return user 
+  if (res.ok) {
+  const userList = await res.json();
+  this.users = userList; // 👈 CRUCIAL: La lista del servicio debe actualizarse aquí
+  return userList;
+  }
+  return undefined;
+  
 }
 
 async deleteUser(id: number) {
