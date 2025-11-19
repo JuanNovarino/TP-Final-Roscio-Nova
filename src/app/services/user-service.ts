@@ -35,7 +35,7 @@ async getUsers (){
   });
   if (res.ok) {
   const userList = await res.json();
-  this.users = userList; // 👈 CRUCIAL: La lista del servicio debe actualizarse aquí
+  this.users = userList; 
   return userList;
   }
   return undefined;

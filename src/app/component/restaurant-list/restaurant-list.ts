@@ -4,7 +4,7 @@ import { User } from '../../interfaces/user';
 
 @Component({
   selector: 'app-restaurant-list',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './restaurant-list.html',
   styleUrl: './restaurant-list.scss',
 })

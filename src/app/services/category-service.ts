@@ -72,7 +72,7 @@ export class CategoryService {
         return true;
   }
 
-  async editProduct(categoryEdit: Category) {
+  async editCategory(categoryEdit: Category) {
           const res = await fetch(this.URL_BASE + "/" + categoryEdit.id, {
               method: "PUT",
               headers: {

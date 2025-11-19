@@ -1,0 +1,19 @@
+<div class="menu-container">
+    <h2>Menú del Restaurante</h2>
+
+    
+
+            <h3>Listado de Categorías:</h3>
+            
+            
+            @for (category of categoryList; track category.id) {
+                <div>
+                    
+                    <p>{{ category.name }}</p> 
+                    
+                </div>
+            }
+        </div>
+
+    
+

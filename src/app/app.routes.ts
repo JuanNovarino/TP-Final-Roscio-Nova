@@ -8,11 +8,16 @@ import { AdminLayout } from './components/admin-layout/admin-layout';
 import { ProductList } from './component/product-list/product-list';
 import { MyProfile } from './components/my-profile/my-profile';
 import { EditUser } from './components/edit-user/edit-user';
+import { Menu } from './pages/menu/menu';
 
 export const routes: Routes = [
     {
         path: "",
         component: Home,
+    },
+    {
+      path: "menu/:idUser",
+      component: Menu,
     },
     {
       path: "login",
