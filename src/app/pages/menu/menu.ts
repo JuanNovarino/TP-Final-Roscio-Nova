@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject, OnInit, signal} from '@angular/core';
 import { CategoryService } from '../../services/category-service';
 import { AuthService } from '../../services/auth-service';
 import { Category } from '../../interfaces/category';
@@ -14,7 +14,9 @@ import { ActivatedRoute, RouterModule } from '@angular/router';
 export class Menu implements OnInit {
 categoriesService = inject(CategoryService)
   authService = inject(AuthService)
-  route = inject(ActivatedRoute); 
+  route = inject(ActivatedRoute);
+  
+  id = signal<number>(0);
 
   categoryList : Category[] | undefined
   loadingCategories = true;
@@ -33,6 +35,7 @@ categoriesService = inject(CategoryService)
 
     const restaurantid = parseInt(idUserString, 10);
 
+    this.id.set(restaurantid);
     
     const categoriesData = await this.categoriesService.getCategoriesByUserId(restaurantid);
 

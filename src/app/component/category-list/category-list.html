@@ -1,1 +1,12 @@
-<p>category-list works!</p>
+<!--div>
+    <button>
+        {{ category().name }}
+    </button>
+    <div [id]="'category-' + category().id">
+        @for (products of productService.products[this.menuService.id()]; track $index) {
+        @if (products.categoryId === category().id) {
+        <app-products-list [products]="products"></app-products-list>
+        }
+        }
+    </div>
+</div!-->
