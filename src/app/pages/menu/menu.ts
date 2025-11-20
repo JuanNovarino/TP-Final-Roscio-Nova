@@ -12,6 +12,7 @@ import { CategoryList } from '../../component/category-list/category-list';
   selector: 'app-menu',
   imports: [RouterModule, CategoryList],
   templateUrl: './menu.html',
+  styleUrl: './menu.scss',
    
 })
 export class Menu implements OnInit {

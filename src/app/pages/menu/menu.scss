@@ -1,0 +1,40 @@
+.menu-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: 'Inter', sans-serif;
+  background-color: #ffffff; 
+  min-height: 100vh;
+
+ 
+  h2 {
+    text-align: center;
+    color: #111827; 
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.025em;
+  }
+
+  
+  h3 {
+    text-align: center;
+    color: #6b7280; 
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    
+    
+    &::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 4px;
+      background-color: #00B368; 
+      margin: 1rem auto 0;
+      border-radius: 2px;
+    }
+  }
+}
