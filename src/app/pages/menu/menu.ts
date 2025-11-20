@@ -1,25 +1,31 @@
 import { Component, inject, OnInit, signal} from '@angular/core';
 import { CategoryService } from '../../services/category-service';
 import { AuthService } from '../../services/auth-service';
+import { ProductService } from '../../services/product-service';
 import { Category } from '../../interfaces/category';
+import { Product } from '../../interfaces/product';
 import { ActivatedRoute, RouterModule } from '@angular/router';
+import { CategoryList } from '../../component/category-list/category-list';
 
 
 @Component({
   selector: 'app-menu',
-  imports: [RouterModule],
+  imports: [RouterModule, CategoryList],
   templateUrl: './menu.html',
    
 })
 export class Menu implements OnInit {
-categoriesService = inject(CategoryService)
+  categoriesService = inject(CategoryService)
+  productsService = inject(ProductService)
   authService = inject(AuthService)
   route = inject(ActivatedRoute);
   
   id = signal<number>(0);
 
   categoryList : Category[] | undefined
+  allProducts: Product[] | undefined;
   loadingCategories = true;
+  loadingProducts = true
 
   async ngOnInit() {
     
@@ -45,10 +51,27 @@ categoriesService = inject(CategoryService)
     
 
     this.loadingCategories = false;
+
+    const productsData = await this.productsService.getProductsByUserId(restaurantid);
+
+    if (productsData){
+      this.allProducts = productsData;
+    }
+    this.loadingProducts = false;
+
+    
+    
   }
   
   }
 
+    /*const productsData = await this.productsService.getProductsByUserId(restaurantid);
+
+    if (productsData){
+      this.allProducts = productsData;
+    }
+    this.loadingProducts = false;*/
+    
   
  
 

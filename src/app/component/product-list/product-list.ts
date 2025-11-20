@@ -9,5 +9,6 @@ import { Product } from '../../interfaces/product';
   styleUrl: './product-list.scss',
 })
 export class ProductList {
+
 products = input.required<Product>();
 }

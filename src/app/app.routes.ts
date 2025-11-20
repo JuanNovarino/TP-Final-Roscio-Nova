@@ -19,6 +19,7 @@ export const routes: Routes = [
       path: "menu/:idUser",
       component: Menu,
     },
+ 
     {
       path: "login",
       component : LoginPage,
@@ -35,8 +36,6 @@ export const routes: Routes = [
        children: [
            
             { path: "", redirectTo: "productos", pathMatch: "full" }, 
-            
-            { path: "productos", component: ProductList }, 
 
             {
               path: "myprofile",
@@ -48,7 +47,6 @@ export const routes: Routes = [
               component: EditUser,
             }
                         
-            //{ path: "categorias", component: CategoryListComponent },
 
            
         ]
