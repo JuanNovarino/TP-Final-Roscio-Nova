@@ -63,7 +63,6 @@ export class Menu implements OnInit {
     this.loadingProducts = false;
 
     
-    
   }
   
   }

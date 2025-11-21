@@ -1,3 +1,22 @@
 <p>myrestaurant works!</p>
 
+
+
 <a routerLink="/admin/myrestaurant/new">Nueva Categoria</a>
+
+<div>
+    <div>
+      <div>
+        <!--h2> {{restaurantName()}}</h2!-->
+      </div>
+      @for (category of categoryList; track $index) {
+      <div>
+        <app-logged-category-list [category]="category"></app-logged-category-list>
+      </div>
+      }
+    </div>
+  </div>
+        
+
+    
+

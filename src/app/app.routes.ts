@@ -55,7 +55,7 @@ export const routes: Routes = [
             },
 
             {
-              path: "myrestaurant/:idUser/edit",
+              path: "myrestaurant/:idCategory/edit",
               component: NewEditCategory,
             },
 

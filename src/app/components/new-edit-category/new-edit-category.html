@@ -1,1 +1,45 @@
-<p>new-edit-category works!</p>
+<div class="login-container color">
+  <section class="login-box">
+    
+    
+      
+    
+      <h2 class="login-title">Crear Nueva Categoría</h2>
+    
+    
+    <form (ngSubmit)="handleFormSubmission(newCategoryForm)" #newCategoryForm="ngForm">
+      
+      <div class="form-group">
+        <label for="name" class="form-label">Nombre de la Categoría*</label>
+        
+        <input 
+          id="name" 
+          name="name" 
+          type="text" 
+          ngModel 
+          required="true" 
+          minlength="2" 
+          maxlength="30" 
+          #name="ngModel" 
+          class="form-input">
+        
+        @if (name.dirty && name.invalid) {
+          <p class="error-text">El nombre es obligatorio y debe tener al menos 2 caracteres.</p>
+        }
+      </div>
+
+      @if (errorEnBack) {
+        <p class="error-text" style="text-align: center; margin-top: 1rem;">Error al guardar la categoría, intente nuevamente.</p>
+      }
+
+      <!-- Botón de Envío -->
+      <button [disabled]="newCategoryForm.invalid || isSubmitting" class="btn btn-primary">
+
+          <span>Crear Categoría</span>
+        
+      </button>
+
+    </form>
+    
+  </section>
+</div>
