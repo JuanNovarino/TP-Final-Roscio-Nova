@@ -1,4 +1,4 @@
-import { Component, inject, OnInit, signal} from '@angular/core';
+import { Component, inject, OnInit, signal,} from '@angular/core';
 import { CategoryService } from '../../services/category-service';
 import { AuthService } from '../../services/auth-service';
 import { ProductService } from '../../services/product-service';
@@ -29,6 +29,8 @@ export class Menu implements OnInit {
   loadingProducts = true
 
   async ngOnInit() {
+
+   
     
     this.loadingCategories = true;
 

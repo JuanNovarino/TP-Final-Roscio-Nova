@@ -9,6 +9,8 @@ import { ProductList } from './component/product-list/product-list';
 import { MyProfile } from './components/my-profile/my-profile';
 import { EditUser } from './components/edit-user/edit-user';
 import { Menu } from './pages/menu/menu';
+import { Myrestaurant } from './components/myrestaurant/myrestaurant';
+import { NewEditCategory } from './components/new-edit-category/new-edit-category';
 
 export const routes: Routes = [
     {
@@ -41,11 +43,28 @@ export const routes: Routes = [
               path: "myprofile",
               component : MyProfile,
             },
+            {
+              path: "myrestaurant",
+              component: Myrestaurant,
+            },
+
+            
+            {
+              path: "myrestaurant/new",
+              component: NewEditCategory,
+            },
+
+            {
+              path: "myrestaurant/:idUser/edit",
+              component: NewEditCategory,
+            },
 
             {
               path: "myprofile/:idUser/edit",
               component: EditUser,
             }
+
+            
                         
 
            
