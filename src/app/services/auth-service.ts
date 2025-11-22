@@ -14,6 +14,7 @@ export class AuthService{
 
   getToken(): string | null {
     if (!this.token) this.token = localStorage.getItem("token");
+    console.log("Token devuelto:", this.token);
     return this.token;
   }
 

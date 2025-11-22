@@ -14,33 +14,24 @@ import { LoggedCategoryList } from '../../component/logged-category-list/logged-
   templateUrl: './myrestaurant.html',
   styleUrl: './myrestaurant.scss',
 })
-export class Myrestaurant {
+export class Myrestaurant{
   
- 
-  categoriesService = inject(CategoryService)
-  authService = inject(AuthService)
-  IdUser = this.authService.getUserId()
-  categoryList : Category[] | undefined
+ auth = inject(AuthService)
+ categoryList : Category[] | undefined
+  categoryService = inject(CategoryService)
+  productService = inject(ProductService)
+  id = this.auth.getUserId()
+  
+  async ngOnInit() {
+    if (this.id != undefined) {
+       const categories = await this.categoryService.getCategoriesByUserId(this.id)
+    
 
-  loadingCategories = true;
-
-   async ngOnInit() {
-
-    this.loadingCategories = true;
-
-    if(this.IdUser != undefined) {
-      
-      const categoriesData = await this.categoriesService.getCategoriesByUserId(this.IdUser)
+    if (categories) {
+          this.categoryList = categories;
+      }
     }
-   
-
-     if (categoriesData) {
-        this.categoryList = categoriesData;
-    }
-    console.log(this.categoryList)
-
-    this.loadingCategories = false;
-   }
+  }
 
   
 }

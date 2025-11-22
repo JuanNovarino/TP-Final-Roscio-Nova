@@ -1,1 +1,12 @@
-<p>logged-category-list works!</p>
+
+<p>{{ category().name }}</p>
+
+@for (product of productList; track $index) { 
+  <div>
+    @if (category().id === product.categoryId){
+        <app-logged-product-list [product]="product"></app-logged-product-list>
+    }
+    
+  </div>
+    
+}  
