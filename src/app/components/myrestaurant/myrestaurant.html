@@ -1,13 +1,20 @@
-<p>myrestaurant works!</p>
-
-
-
-<a routerLink="/admin/myrestaurant/new">Nueva Categoria</a>
-
-@for (category of categoryList; track $index) { 
-  <div class="border-bottom py-2">
-    <app-logged-category-list [category]="category"></app-logged-category-list>
+<div class="menu-container">
+  
+  <h2 class="main-title">Menú del Restaurante</h2>
+  
+  <div class="subtitle-wrapper">
+    <span class="subtitle">LISTADO DE CATEGORÍAS:</span>
   </div>
-    
-}  
+
+  <div class="actions-bar">
+    <a routerLink="/admin/myrestaurant/new" class="btn-new-category">+ Nueva Categoría</a>
+  </div>
+
+  <div class="categories-content">
+    @for (category of categoryList; track $index) { 
+      <app-logged-category-list [category]="category"></app-logged-category-list>
+    }  
+  </div>
+
+</div>
 

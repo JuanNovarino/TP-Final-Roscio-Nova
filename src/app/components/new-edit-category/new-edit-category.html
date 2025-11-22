@@ -1,45 +1,53 @@
-<div class="login-container color">
-  <section class="login-box">
+<div class="page-container">
+  <div class="form-card">
     
-    
-      
-    
-      <h2 class="login-title">Crear Nueva Categoría</h2>
-    
-    
+    <div class="card-header">
+      <h2>{{ idCategory ? 'Editar Categoría' : 'Nueva Categoría' }}</h2>
+      <p class="subtitle">Completa la información para tu menú</p>
+    </div>
+
     <form (ngSubmit)="handleFormSubmission(newCategoryForm)" #newCategoryForm="ngForm">
       
       <div class="form-group">
-        <label for="name" class="form-label">Nombre de la Categoría*</label>
+        <label for="name" class="form-label">Nombre de la Categoría</label>
         
         <input 
           id="name" 
           name="name" 
           type="text" 
           ngModel 
-          required="true" 
+          required 
           minlength="2" 
           maxlength="30" 
+          placeholder="Ej: Bebidas, Entradas..."
           #name="ngModel" 
-          class="form-input">
+          class="form-input"
+          [class.input-error]="name.invalid && name.dirty">
         
         @if (name.dirty && name.invalid) {
-          <p class="error-text">El nombre es obligatorio y debe tener al menos 2 caracteres.</p>
+          <span class="error-message">El nombre debe tener al menos 2 caracteres.</span>
         }
       </div>
 
       @if (errorEnBack) {
-        <p class="error-text" style="text-align: center; margin-top: 1rem;">Error al guardar la categoría, intente nuevamente.</p>
+        <div class="error-banner">
+          <p>Ocurrió un error al guardar. Intenta nuevamente.</p>
+        </div>
       }
 
-      <!-- Botón de Envío -->
-      <button [disabled]="newCategoryForm.invalid || isSubmitting" class="btn btn-primary">
-
-          <span>Crear Categoría</span>
+      <div class="form-actions">
+        <button 
+          [disabled]="newCategoryForm.invalid || isSubmitting" 
+          class="btn btn-primary">
+          {{ isSubmitting ? 'Guardando...' : (idCategory ? 'Actualizar' : 'Crear Categoría') }}
+        </button>
         
-      </button>
+        <a routerLink="/admin/myrestaurant" class="btn btn-secondary">
+          Cancelar
+        </a>
+      </div>
 
     </form>
     
-  </section>
+  </div>
 </div>

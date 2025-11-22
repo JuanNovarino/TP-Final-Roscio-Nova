@@ -1,12 +1,15 @@
+<div class="category-block">
+  <h3 class="category-name">{{ category().name }}</h3>
 
-<p>{{ category().name }}</p>
-
-@for (product of productList; track $index) { 
-  <div>
-    @if (category().id === product.categoryId){
-        <app-logged-product-list [product]="product"></app-logged-product-list>
-    }
-    
+  <div class="products-grid">
+    @for (product of productList; track $index) { 
+      
+      @if (category().id === product.categoryId){
+        <div class="grid-item">
+          <app-logged-product-list [product]="product"></app-logged-product-list>
+        </div>
+      }
+      
+    }  
   </div>
-    
-}  
+</div>
