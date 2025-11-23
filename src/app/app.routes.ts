@@ -11,6 +11,7 @@ import { EditUser } from './components/edit-user/edit-user';
 import { Menu } from './pages/menu/menu';
 import { Myrestaurant } from './components/myrestaurant/myrestaurant';
 import { NewEditCategory } from './components/new-edit-category/new-edit-category';
+import { LoggedProductDetails } from './components/logged-product-details/logged-product-details';
 
 export const routes: Routes = [
     {
@@ -62,7 +63,11 @@ export const routes: Routes = [
             {
               path: "myprofile/:idUser/edit",
               component: EditUser,
-            }
+            },
+            {
+              path: "myrestaurant/:IdProduct",
+              component: LoggedProductDetails,
+            },
 
             
                         

@@ -25,7 +25,8 @@ export class CategoryService {
           if (!res.ok) return undefined;
           const resProducts: Category[] = await res.json();
         
-          this.categories[userId] = resProducts //actualizar el record con las categorias geteadas 
+          this.categories[userId] = resProducts //actualizar el record con las categorias geteadas
+          return resProducts
     }
 
       async createCategory(newcategory : NewCategory) { //asignar id ?? 
