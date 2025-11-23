@@ -3,9 +3,7 @@
 
   <a [routerLink]="['/admin/myrestaurant', category().id, 'edit']">Editar</a>
 
-   <button (click)="deleteCategory()" class="btn btn-danger">
-        Eliminar
-   </button>
+   <button (click)="openDeleteModal()">Borrar</button>
 
   <div class="products-grid">
     @for (product of productList; track $index) { 

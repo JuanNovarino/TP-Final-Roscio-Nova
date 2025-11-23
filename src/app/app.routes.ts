@@ -37,7 +37,7 @@ export const routes: Routes = [
       
        children: [
            
-            { path: "", redirectTo: "productos", pathMatch: "full" }, 
+            { path: "", redirectTo: "myrestaurant", pathMatch: "full" }, 
 
             {
               path: "myprofile",

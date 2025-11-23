@@ -11,9 +11,12 @@
   </div>
 
   <div class="categories-content">
-    @for (category of categoryList; track $index) { 
+    @if(this.id){
+       @for (category of categoryService.categories[this.id]; track $index) { 
       <app-logged-category-list [category]="category"></app-logged-category-list>
     }  
+    }
+   
   </div>
 
 </div>

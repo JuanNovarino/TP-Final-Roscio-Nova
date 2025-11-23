@@ -7,6 +7,7 @@ import { AuthService } from '../../services/auth-service';
 import { Product } from '../../interfaces/product';
 import { Router, RouterLink } from '@angular/router';
 import { CategoryService } from '../../services/category-service';
+import Swal from 'sweetalert2';
 
 
 @Component({
@@ -37,18 +38,21 @@ export class LoggedCategoryList {
       }
     }
 
-     async deleteCategory() {
-    if (this.category().id) {
-
-      const res = await this.categoryService.deleteCategory(this.category().id);
-     
-      if (res) {
-        alert('Cuenta eliminada con éxito.');
-        this.router.navigate(['/admin/myrestaurant']);
-      } else {
-        alert('Error al eliminar la cuenta.');
+     async openDeleteModal(){
+    
+    Swal.fire({
+      title: "¿Desea borrar la Categoria?",
+      showDenyButton: true,
+      showCancelButton: true,
+      showConfirmButton: false,
+      cancelButtonText: "Cancelar",
+      denyButtonText: `Eliminar definitivamente`
+    }).then((result) => {
+      if (result.isDenied) { //Reviso que haya clickeado en el botón rojo.
+       this.categoryService.deleteCategory(this.category().id);
       }
-      
-    }
+    });
+    await this.myRestaurant.ngOnInit();
   }
+
 }

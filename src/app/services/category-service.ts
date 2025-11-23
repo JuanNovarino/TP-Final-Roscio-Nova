@@ -16,7 +16,7 @@ export class CategoryService {
 
   
 
-  async getCategoriesByUserId(userId : string | number){
+  async getCategoriesByUserId(userId : number){ 
           const res = await fetch(`https://w370351.ferozo.com/api/users/${userId}/categories`, {
                headers: {
                   Authorization: "Bearer " + this.authService.getToken(),
@@ -24,7 +24,8 @@ export class CategoryService {
           });
           if (!res.ok) return undefined;
           const resProducts: Category[] = await res.json();
-          return resProducts;
+        
+          this.categories[userId] = resProducts //actualizar el record con las categorias geteadas 
     }
 
       async createCategory(newcategory : NewCategory) { //asignar id ?? 
@@ -61,15 +62,14 @@ export class CategoryService {
         });
         if (!res.ok) return false;
 
-         const currentUserId = this.authService.getUserId();
+         const currentUserId = this.authService.getUserId()!;
 
          if(currentUserId!==undefined && this.categories[currentUserId]){
 
-          this.categories[currentUserId] = this.categories[currentUserId].filter(
-            category => category.id != id
-          );
+          this.categories[currentUserId!] = this.categories[currentUserId].filter(category => category.id != id);
          }
         return true;
+        
   }
 
   async editCategory(categoryEdit: Category) {

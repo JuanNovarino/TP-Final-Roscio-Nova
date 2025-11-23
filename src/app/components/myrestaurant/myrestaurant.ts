@@ -23,13 +23,10 @@ export class Myrestaurant{
   id = this.auth.getUserId()
   
   async ngOnInit() {
-    if (this.id != undefined) {
-       const categories = await this.categoryService.getCategoriesByUserId(this.id)
-    
 
-    if (categories) {
-          this.categoryList = categories;
-      }
+    if (this.id != undefined) {
+        await this.categoryService.getCategoriesByUserId(this.id)
+      
     }
   }
 

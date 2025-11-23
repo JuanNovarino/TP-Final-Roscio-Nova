@@ -1,9 +1,10 @@
-import { Component, inject, OnInit, viewChild } from '@angular/core';
+import { Component, inject, OnInit, viewChild, input } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { Category, NewCategory } from '../../interfaces/category'; 
 import { CategoryService } from '../../services/category-service'; 
 import { Router, ActivatedRoute, RouterModule } from '@angular/router';
 import { AuthService } from '../../services/auth-service';
+
 
 @Component({
   selector: 'app-new-edit-category',
@@ -16,6 +17,7 @@ export class NewEditCategory implements OnInit {
   router = inject(Router);
   route = inject(ActivatedRoute);
   authService = inject(AuthService);
+
   errorEnBack = false;
   idCategory: number | null = null; 
   
@@ -60,8 +62,10 @@ export class NewEditCategory implements OnInit {
       
       const categoryToEdit: Category = { 
         ...categoryData, 
-        id: this.idCategory 
+        id: this.idCategory
+        
       };
+      
 
       res = await this.categoryService.editCategory(categoryToEdit);
     } else {
