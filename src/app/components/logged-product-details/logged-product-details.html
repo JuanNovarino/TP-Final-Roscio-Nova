@@ -1,1 +1,54 @@
-<p>logged-product-details works!</p>
+
+
+<div id="contenedor">
+    
+    
+    @if(cargandoProducto){
+        <p class="loading-message">Cargando producto...</p>
+    } @else if(!producto) {
+        <p class="error-message">No se encontró el producto</p>
+    } @else {
+        
+        <div class="tarjeta-contacto">
+            
+            <div class="cont-imagen">
+                <img 
+                    src="https://placehold.co/100x100/5d3a9b/ffffff/png?text={{producto!.name.charAt(0)}}" 
+                    alt="{{producto!.name}} Profile" 
+                    class="redondeado-imagen"
+                />
+            </div>
+            
+            
+            <h1 class="nombre-cont">{{producto!.name}}</h1>
+            
+            
+            <div class="info-cont">
+                <p><span>Descripción: {{producto.description}}</span></p>
+                <p><span>Precio: {{producto.price}}</span></p>
+                <p><span>Destacado: {{producto.featured}}</span></p>
+                <p><span>Etiqueta: {{producto.labels}}</span></p>
+                <p><span>Recomendado para: {{producto.recommendedFor}}</span></p>
+                <p><span>Discount: {{producto.discount}}</span></p>
+                <p><span> Tiene HappyHour: {{producto.hasHappyHour}}</span></p>
+
+            </div>
+
+            
+            <!--div class="section-fav">
+                @if (contacto.isFavorite) {
+                    <p class="estado-fav">⭐ Favorito</p>
+                    <button (click)="toggleFavorite()" class="unfavorite-btn">Desmarcar favorito</button>
+                } @else {
+                    <button (click)="toggleFavorite()" class="favorite-btn">Marcar como favorito</button>
+                }
+            </div>
+
+            <div class="grupo-botones">
+                <a [routerLink]="['/contacts',idContacto(),'edit']" class="action-link edit-btn">Editar</a>
+                <button (click)="deleteContact()" class="action-btn delete-btn">Eliminar</button>
+            </div!-->
+        </div>
+    }
+</div>
+
