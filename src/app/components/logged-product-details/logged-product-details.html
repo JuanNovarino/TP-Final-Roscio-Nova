@@ -1,53 +1,78 @@
-
-
 <div id="contenedor">
     
-    
     @if(cargandoProducto){
-        <p class="loading-message">Cargando producto...</p>
+        <div class="loading-container">
+            <div class="spinner"></div>
+            <p>Cargando lo mejor de la cocina...</p>
+        </div>
     } @else if(!producto) {
-        <p class="error-message">No se encontró el producto</p>
+        <div class="error-banner">
+            <p>Ups, no encontramos este producto.</p>
+            <a routerLink="/admin/myrestaurant" class="btn-back">Volver al menú</a>
+        </div>
     } @else {
         
-        <div class="tarjeta-contacto">
-            
-            <div class="cont-imagen">
-                <img 
-                    src="https://placehold.co/100x100/5d3a9b/ffffff/png?text={{producto!.name.charAt(0)}}" 
-                    alt="{{producto!.name}} Profile" 
-                    class="redondeado-imagen"
-                />
+        <div class="product-card">
+            <a [routerLink]="['/admin/myrestaurant']" class="close-btn">×</a>
+
+            <div class="product-header">
+                <div class="image-wrapper">
+                    <div class="icon-placeholder">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M11 9H9V2H7v7H5V2H3v7c0 2.12 1.66 3.84 3.75 3.97V22h2.5v-9.03C11.34 12.84 13 11.12 13 9V2h-2v7zm5-3v8h2.5v8H21V2c-2.76 0-5 2.24-5 4z"/>
+                        </svg>
+                    </div>  
+                </div>
             </div>
             
-            
-            <h1 class="nombre-cont">{{producto!.name}}</h1>
-            
-            
-            <div class="info-cont">
-                <p><span>Descripción: {{producto.description}}</span></p>
-                <p><span>Precio: {{producto.price}}</span></p>
-                <p><span>Destacado: {{producto.featured}}</span></p>
-                <p><span>Etiqueta: {{producto.labels}}</span></p>
-                <p><span>Recomendado para: {{producto.recommendedFor}}</span></p>
-                <p><span>Discount: {{producto.discount}}</span></p>
-                <p><span> Tiene HappyHour: {{producto.hasHappyHour}}</span></p>
+            <div class="product-body">
+                <div class="title-row">
+                    <h1 class="product-name">{{producto!.name}}</h1>
+                    <span class="product-price">${{producto!.price}}</span>
+                </div>
 
+                <div class="badges-container">
+                    @if(producto!.featured) {
+                        <span class="badge badge-featured">✨ Destacado</span>
+                    }
+                    @if(producto!.hasHappyHour) {
+                        <span class="badge badge-happy">🍹 Happy Hour</span>
+                    }
+                    @if(producto!.discount > 0) {
+                        <span class="badge badge-discount">🏷️ {{producto!.discount}}% OFF</span>
+                    }
+                </div>
+                
+                <div class="separator"></div>
+
+                <div class="info-grid">
+                    <div class="info-item description">
+                        <span class="label">Descripción</span>
+                        <p class="value">{{producto!.description || 'Sin descripción disponible.'}}</p>
+                    </div>
+
+                    <div class="info-item">
+                        <span class="label">Etiquetas</span>
+                        <p class="value tags-value">
+                            @if(producto!.labels && producto!.labels.length > 0) {
+                                {{ producto!.labels.join(', ') }}
+                            } @else {
+                                <span class="muted">Sin etiquetas</span>
+                            }
+                        </p>
+                    </div>
+
+                    <div class="info-item">
+                        <span class="label">Recomendado para</span>
+                        <p class="value">{{producto!.recommendedFor}} personas</p>
+                    </div>
+                </div>
+
+                <div class="actions">
+                    <button class="btn-edit">Editar Producto</button>
+                    <button type="button" class="btn-delete">Eliminar</button>
+                </div>
             </div>
-
-            
-            <!--div class="section-fav">
-                @if (contacto.isFavorite) {
-                    <p class="estado-fav">⭐ Favorito</p>
-                    <button (click)="toggleFavorite()" class="unfavorite-btn">Desmarcar favorito</button>
-                } @else {
-                    <button (click)="toggleFavorite()" class="favorite-btn">Marcar como favorito</button>
-                }
-            </div>
-
-            <div class="grupo-botones">
-                <a [routerLink]="['/contacts',idContacto(),'edit']" class="action-link edit-btn">Editar</a>
-                <button (click)="deleteContact()" class="action-btn delete-btn">Eliminar</button>
-            </div!-->
         </div>
     }
 </div>

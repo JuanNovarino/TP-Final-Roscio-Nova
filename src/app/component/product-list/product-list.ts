@@ -12,4 +12,5 @@ import { RouterLink } from '@angular/router';
 export class ProductList {
 
 products = input.required<Product>();
+idUser = input.required<number>();
 }

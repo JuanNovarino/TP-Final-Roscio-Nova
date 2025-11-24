@@ -22,16 +22,11 @@ export const routes: Routes = [
     {
       path: "menu/:idUser",
       component: Menu,
-
-       children: [
-
-         {
-          path: "menu/:IdProduct",
-          component : ProductDetails,
-         },
-       ]
     },
-    
+    {
+      path: "menu/:idUser/product/:IdProduct",
+      component: ProductDetails,
+    },
  
     {
       path: "login",

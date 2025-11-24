@@ -1,7 +1,4 @@
 
-<a [routerLink]="['/menu/:IdUser', products().id]">aaaaaa</a>
-
-
-<div class="restaurant-card-item">
-        <p class="restaurant-name-text">{{products().name}}</p>
- </div>
+<div class="restaurant-card-item" [routerLink]="['/menu', idUser(), 'product', products().id]">
+    <p class="restaurant-name-text">{{products().name}}</p>
+</div>

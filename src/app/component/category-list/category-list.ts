@@ -19,6 +19,7 @@ export class CategoryList {
   category = input.required<Category>();
  
   allProducts = input<Product[] | undefined>();
+  idUser = input.required<number>();
 
   
   filterProducts(): Product[] {
