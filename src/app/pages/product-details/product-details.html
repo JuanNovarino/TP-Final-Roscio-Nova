@@ -1,1 +1,74 @@
-<p>product-details works!</p>
+<div id="contenedor">
+    
+    @if(cargandoProducto){
+        <div class="loading-container">
+            <div class="spinner"></div>
+            <p>Cargando lo mejor de la cocina...</p>
+        </div>
+    } @else if(!producto) {
+        <div class="error-banner">
+            <p>Ups, no encontramos este producto.</p>
+            <a routerLink="/admin/myrestaurant" class="btn-back">Volver al menú</a>
+        </div>
+    } @else {
+        
+        <div class="product-card">
+            <a class="close-btn">×</a>
+
+            <div class="product-header">
+                <div class="image-wrapper">
+                    <div class="icon-placeholder">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M11 9H9V2H7v7H5V2H3v7c0 2.12 1.66 3.84 3.75 3.97V22h2.5v-9.03C11.34 12.84 13 11.12 13 9V2h-2v7zm5-3v8h2.5v8H21V2c-2.76 0-5 2.24-5 4z"/>
+                        </svg>
+                    </div>  
+                </div>
+            </div>
+            
+            <div class="product-body">
+                <div class="title-row">
+                    <h1 class="product-name">{{producto!.name}}</h1>
+                    <span class="product-price">${{producto!.price}}</span>
+                    <span class="product-price">${{producto!.price - producto!.price * producto!.discount/100}}</span>
+                </div>
+
+                <div class="badges-container">
+                    @if(producto!.featured) {
+                        <span class="badge badge-featured">✨ Destacado</span>
+                    }
+                    @if(producto!.hasHappyHour) {
+                        <span class="badge badge-happy">🍹 Happy Hour</span>
+                    }
+                    @if(producto!.discount > 0) {
+                        <span class="badge badge-discount">🏷️ {{producto!.discount}}% OFF</span>
+                    }
+                </div>
+                
+                <div class="separator"></div>
+
+                <div class="info-grid">
+                    <div class="info-item description">
+                        <span class="label">Descripción</span>
+                        <p class="value">{{producto!.description || 'Sin descripción disponible.'}}</p>
+                    </div>
+
+                    <div class="info-item">
+                        <span class="label">Etiquetas</span>
+                        <p class="value tags-value">
+                            @if(producto!.labels && producto!.labels.length > 0) {
+                                {{ producto!.labels.join(', ') }}
+                            } @else {
+                                <span class="muted">Sin etiquetas</span>
+                            }
+                        </p>
+                    </div>
+
+                    <div class="info-item">
+                        <span class="label">Recomendado para</span>
+                        <p class="value">{{producto!.recommendedFor}} persona/s</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
