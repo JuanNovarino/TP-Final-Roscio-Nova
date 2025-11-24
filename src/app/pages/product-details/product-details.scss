@@ -2,26 +2,26 @@
   display: block;
   width: 100%;
   min-height: 100vh;
-  background-color: #FBC240; // Fondo amarillo base
+  background-color: #FBC240; 
   font-family: 'Inter', sans-serif;
 }
 
 #contenedor {
   display: flex;
   justify-content: center;
-  align-items: center; // Centrado vertical
+  align-items: center; 
   min-height: 100vh;
   padding: 2rem;
   box-sizing: border-box;
 }
 
-/* --- Tarjeta Principal --- */
+
 .product-card {
   background: #ffffff;
   width: 100%;
   max-width: 900px;
   border-radius: 24px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08); // Sombra suave y elegante
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08); 
   display: flex;
   overflow: hidden;
   position: relative;
@@ -33,7 +33,7 @@
   }
 }
 
-/* --- Sección de Imagen --- */
+
 .product-header {
   flex: 1;
   background-color: #f9fafb;
@@ -48,26 +48,25 @@
     width: 100%;
     max-width: 280px;
     aspect-ratio: 1/1; 
-    /* Forma cuadrada con bordes redondeados (Squircle) */
     border-radius: 40px; 
     overflow: hidden;
     box-shadow: 0 15px 30px rgba(0, 179, 104, 0.15);
     border: 4px solid #ffffff;
     background-color: #ffffff;
     
-    /* Estilos para nuestro nuevo icono SVG */
+    
     .icon-placeholder {
       width: 100%;
       height: 100%;
-      background-color: #E6F8F1; /* Fondo verde muy clarito */
+      background-color: #E6F8F1; 
       display: flex;
       align-items: center;
       justify-content: center;
       
       svg {
-        width: 50%;  /* Tamaño del icono respecto al cuadro */
+        width: 50%;  
         height: 50%;
-        fill: #00B368; /* Color del icono (Tu verde principal) */
+        fill: #00B368; 
         transition: transform 0.3s ease;
       }
     }
@@ -76,7 +75,7 @@
   }
 }
 
-/* --- Sección de Detalles --- */
+
 .product-body {
   flex: 1.5;
   padding: 3rem;
@@ -89,11 +88,11 @@
   }
 }
 
-/* --- Título y Precio --- */
+
 .title-row {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: flex-start; 
   margin-bottom: 1rem;
   gap: 1rem;
 
@@ -105,15 +104,32 @@
     line-height: 1.1;
   }
 
-  .product-price {
+  
+  .prices-wrapper {
+    display: flex;
+    flex-direction: column; 
+    align-items: flex-end;  
+    gap: 2px;
+  }
+
+  
+  .final-price {
     font-size: 1.8rem;
     font-weight: 700;
-    color: #00B368; // Verde Lettera
+    color: #00B368; 
     white-space: nowrap;
+  }
+
+  
+  .original-price {
+    font-size: 1.1rem;    
+    text-decoration: line-through;
+    color: #9ca3af;       
+    font-weight: 500;
   }
 }
 
-/* --- Badges (Etiquetas) --- */
+
 .badges-container {
   display: flex;
   gap: 0.8rem;
@@ -130,19 +146,19 @@
   }
 
   .badge-featured {
-    background-color: #fff7ed; // Naranja muy suave
+    background-color: #fff7ed; 
     color: #ea580c;
     border: 1px solid #ffedd5;
   }
 
   .badge-happy {
-    background-color: #f0fdf4; // Verde muy suave
+    background-color: #f0fdf4; 
     color: #15803d;
     border: 1px solid #dcfce7;
   }
 
   .badge-discount {
-    background-color: #fef2f2; // Rojo suave
+    background-color: #fef2f2; 
     color: #b91c1c;
     border: 1px solid #fee2e2;
   }
@@ -154,7 +170,7 @@
   margin: 1rem 0 2rem 0;
 }
 
-/* --- Grilla de Información --- */
+
 .info-grid {
   display: grid;
   gap: 1.5rem;
@@ -187,55 +203,7 @@
   }
   
   .description .value {
-    color: #4b5563; // Un poco más suave para lectura larga
-  }
-}
-
-/* --- Botones y Acciones --- */
-.actions {
-  margin-top: 2.5rem;
-  display: flex; // Usamos flex para ponerlos lado a lado
-  gap: 1rem;     // Espacio entre botones
-  
-  // Hacemos que ambos botones ocupen el mismo ancho
-  .btn-edit, .btn-delete {
-    flex: 1;
-    padding: 12px 24px;
-    border-radius: 8px;
-    font-weight: 600;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: all 0.2s ease-in-out;
-    // Quitamos el width: 100% que tenía antes el btn-edit
-  }
-
-  .btn-edit {
-    background-color: #111827;
-    color: white;
-    border: 2px solid #111827; // Agregamos borde para igualar tamaños
-
-    &:hover {
-      background-color: #000;
-      border-color: #000;
-      transform: translateY(-2px);
-    }
-  }
-
-  // Estilo para el botón de eliminar (Borde rojo)
-  .btn-delete {
-    background-color: transparent;
-    color: #dc2626; // Rojo intenso
-    border: 2px solid #fee2e2; // Borde rojo muy suave al inicio
-
-    &:hover {
-      border-color: #dc2626; // Borde rojo intenso al pasar el mouse
-      background-color: #fef2f2; // Fondo rojo muy clarito
-      transform: translateY(-2px);
-    }
-    
-    &:active {
-      transform: scale(0.98);
-    }
+    color: #4b5563;
   }
 }
 
@@ -256,7 +224,7 @@
   }
 }
 
-/* --- Loading & Error --- */
+
 .loading-container, .error-banner {
   text-align: center;
   background: white;
@@ -281,7 +249,7 @@
   font-weight: 600;
 }
 
-/* Animación de entrada */
+
 @keyframes slideUp {
   from {
     opacity: 0;

@@ -28,7 +28,15 @@
             <div class="product-body">
                 <div class="title-row">
                     <h1 class="product-name">{{producto!.name}}</h1>
-                    <span class="product-price">${{producto!.price}}</span>
+    
+                    <div class="prices-wrapper">
+                         @if(producto!.discount > 0) {
+                            <span class="original-price">${{producto!.price}}</span>
+                            <span class="final-price">${{producto!.price - (producto!.price * producto!.discount / 100)}}</span>
+                        } @else {
+                                 <span class="final-price">${{producto!.price}}</span>
+                                 }
+                    </div>
                 </div>
 
                 <div class="badges-container">

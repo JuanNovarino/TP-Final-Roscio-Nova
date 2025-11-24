@@ -5,13 +5,14 @@ import { Router,RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-product-details',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './product-details.html',
   styleUrl: './product-details.scss',
 })
 export class ProductDetails {
 
   IdProduct = input.required<string>()
+  idUser = input.required<string>();
   productService = inject(ProductService)
   producto : Product | undefined;
   router = inject(Router);
