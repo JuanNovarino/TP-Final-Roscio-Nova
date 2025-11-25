@@ -76,8 +76,8 @@
                     </div>
                 </div>
 
-                <div class="actions">
-                    <button class="btn-edit">Editar Producto</button>
+                <div class="actions" >
+                   <a [routerLink]="['/admin/myrestaurant', producto.id, 'productedit']" class="btn-action btn-edit">Editar</a>
                     <button type="button" class="btn-delete">Eliminar</button>
                 </div>
             </div>

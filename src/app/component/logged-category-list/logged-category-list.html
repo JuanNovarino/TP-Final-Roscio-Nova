@@ -7,9 +7,12 @@
       <a [routerLink]="['/admin/myrestaurant', category().id, 'edit']" class="btn-action btn-edit">
         Editar
       </a>
+      
       <button (click)="openDeleteModal()" class="btn-action btn-delete">
         Borrar
       </button>
+
+      <a [routerLink]="['/admin/myrestaurant', category().id, 'newproduct']" class="btn-action btn-edit">Crear Producto</a>
     </div>
   </div>
 

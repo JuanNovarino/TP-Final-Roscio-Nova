@@ -13,6 +13,7 @@ import { Myrestaurant } from './components/myrestaurant/myrestaurant';
 import { NewEditCategory } from './components/new-edit-category/new-edit-category';
 import { LoggedProductDetails } from './components/logged-product-details/logged-product-details';
 import { ProductDetails } from './pages/product-details/product-details';
+import { NewEditProduct } from './components/new-edit-product/new-edit-product';
 
 export const routes: Routes = [
     {
@@ -64,6 +65,16 @@ export const routes: Routes = [
             {
               path: "myrestaurant/:idCategory/edit",
               component: NewEditCategory,
+            },
+
+            {
+              path: "myrestaurant/:idCategory/newproduct",
+              component: NewEditProduct,
+            },
+
+            {
+              path: "myrestaurant/:idProduct/productedit",
+              component : NewEditProduct,
             },
 
             {
