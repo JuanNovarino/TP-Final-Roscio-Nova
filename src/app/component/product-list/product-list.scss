@@ -99,3 +99,11 @@
   border-left-color: #FF9800; 
   */
 }
+.product-price {
+    display: block;           /* Para que quede en su propio renglón */
+    font-size: 1.1rem;        /* Un poquito más grande que el texto normal */
+    font-weight: 700;         /* Bien negrita */
+    color: #2e7d32;           /* Tu verde corporativo (elegante, no chillón) */
+    margin-top: 5px;          /* Un poco de aire arriba */
+    letter-spacing: 0.5px;    /* Separación sutil de letras para legibilidad */
+}
