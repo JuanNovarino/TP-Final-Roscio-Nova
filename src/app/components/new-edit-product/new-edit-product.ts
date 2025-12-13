@@ -81,7 +81,7 @@ export class NewEditProduct {
 
   
   availableLabels: string[] = [
-    "Vegan", "Vegetarian", "GlutenFree", "Spicy", "SugarFree", "Kids", "Shareable", "None"
+    "Vegan", "Vegetarian", "GlutenFree", "Spicy", "SugarFree", "Kids", "Shareable",
   ];
   selectedLabels: string[] = []; 
 

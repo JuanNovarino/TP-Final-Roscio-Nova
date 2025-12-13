@@ -76,7 +76,7 @@
         </div>
         
         <div class="form-group">
-          <label for="recommendedFor" class="form-label">Recomendado para (pax)</label>
+          <label for="recommendedFor" class="form-label">Recomendado para</label>
           <input id="recommendedFor" name="recommendedFor" type="number" ngModel min="1" class="form-input" value="1">
         </div>
       </div>
@@ -102,7 +102,7 @@
           }
         </button>
         
-        <a routerLink="/admin/productos" class="btn btn-secondary">
+        <a [routerLink]="['/admin/myrestaurant/',idProduct]" class="btn btn-secondary">
           Cancelar
         </a>
       </div>
