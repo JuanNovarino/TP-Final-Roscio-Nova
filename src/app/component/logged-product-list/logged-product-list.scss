@@ -1,24 +1,109 @@
-.product-card {
-  background-color: #fff;
-  border: 1px solid #e5e7eb; 
-  border-left: 5px solid #FBC240; 
-  border-radius: 8px;
-  padding: 1.5rem;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.02);
-  transition: transform 0.2s, box-shadow 0.2s;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  min-height: 60px;
 
+
+.product-card {
+  background-color: white;
+  border-radius: 12px; 
+  padding: 1.5rem 1.5rem 1.5rem 1.8rem; 
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.03);
+  border: 1px solid #f3f4f6; 
+  border-left: 6px solid #FBC240; 
+  height: 100%;
+  min-height: 90px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  position: relative; 
+  overflow: hidden;
+
+  
   &:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    border-color: #e5e7eb;
+    border-left-color: #ffcd58; 
   }
 }
 
-.product-name {
+.restaurant-name-text {
+  font-size: 1.2rem;
   font-weight: 600;
-  font-size: 1.1rem;
-  color: #1f2937;
+  color: #1f2937; 
+  margin: 0;
+  line-height: 1.4;
 }
+
+.featured-badge {
+  display: none; 
+
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #4CAF50; 
+  color: white; 
+  padding: 0.2rem 0.5rem; 
+  font-size: 0.75rem;
+  font-weight: 700;
+  border-bottom-left-radius: 8px;
+  z-index: 10; 
+}
+
+
+
+
+.featured-product {
+  
+  border-left-color: #4CAF50; 
+  
+
+  box-shadow: 0 4px 6px -1px rgba(0, 150, 0, 0.1), 0 2px 4px -1px rgba(0, 150, 0, 0.06); 
+
+
+  .featured-badge {
+    display: block; 
+  }
+
+  &:hover {
+     border-left-color: #66BB6A;
+  }
+}
+
+.happy-hour-badge {
+  display: none; // Oculto por defecto
+
+  position: absolute;
+  top: 0;
+  right: 120px; /* Posicionamiento: A la izquierda del badge 'Destacado' */
+  background-color: #FF9800; /* Color naranja o amarillo llamativo */
+  color: white; 
+  padding: 0.2rem 0.5rem; 
+  font-size: 0.75rem;
+  font-weight: 700;
+  border-bottom-left-radius: 8px;
+  z-index: 10; 
+  /* Nota: Usamos border-bottom-right-radius para que la esquina interior sea redondeada */
+  border-bottom-right-radius: 8px; 
+  border-bottom-left-radius: 0; // Quitamos el redondeo en la izquierda
+}
+
+/* ================================================= */
+/* ESTILOS CONDICIONALES HAPPY HOUR (.happy-hour-product) */
+/* ================================================= */
+
+.happy-hour-product {
+  /* ACTIVACIÓN DE LA BADGE */
+  // Si el contenedor tiene esta clase, hacemos la badge visible.
+  .happy-hour-badge {
+    display: block; 
+  }
+
+  /*
+  OPCIONAL: Si quieres que el borde lateral cambie cuando es Happy Hour,
+  añade un estilo aquí. Por ejemplo:
+  border-left-color: #FF9800; 
+  */
+}
+
+

@@ -14,4 +14,5 @@ export class LoggedProductList {
   myrestaurant = inject(Myrestaurant)
   product = input.required<Product>();
 
+
 }

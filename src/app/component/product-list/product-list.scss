@@ -31,3 +31,71 @@
   margin: 0;
   line-height: 1.4;
 }
+
+.featured-product {
+  // Cambio de borde para destacarlo (estilos del contenedor)
+  border-left-color: #4CAF50; 
+  box-shadow: 0 4px 6px -1px rgba(0, 150, 0, 0.1), 0 2px 4px -1px rgba(0, 150, 0, 0.06); 
+
+  &:hover {
+    border-left-color: #66BB6A; 
+  }
+  
+  // SOLUCIÓN: Hacemos la badge visible SOLO si el contenedor tiene .featured-product
+  .featured-badge {
+    display: block; 
+  }
+}
+
+.featured-badge {
+  // Por defecto está oculta (display: none; sigue siendo la base)
+  display: none; 
+
+  // Estilos de posicionamiento y apariencia
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #4CAF50; 
+  color: white; 
+  padding: 0.2rem 0.5rem; 
+  font-size: 0.75rem;
+  font-weight: 700;
+  border-bottom-left-radius: 8px;
+  z-index: 10; 
+}
+
+.happy-hour-badge {
+  display: none; // Oculto por defecto
+
+  position: absolute;
+  top: 0;
+  right: 120px; /* Posicionamiento: A la izquierda del badge 'Destacado' */
+  background-color: #FF9800; /* Color naranja o amarillo llamativo */
+  color: white; 
+  padding: 0.2rem 0.5rem; 
+  font-size: 0.75rem;
+  font-weight: 700;
+  border-bottom-left-radius: 8px;
+  z-index: 10; 
+  /* Nota: Usamos border-bottom-right-radius para que la esquina interior sea redondeada */
+  border-bottom-right-radius: 8px; 
+  border-bottom-left-radius: 0; // Quitamos el redondeo en la izquierda
+}
+
+/* ================================================= */
+/* ESTILOS CONDICIONALES HAPPY HOUR (.happy-hour-product) */
+/* ================================================= */
+
+.happy-hour-product {
+  /* ACTIVACIÓN DE LA BADGE */
+  // Si el contenedor tiene esta clase, hacemos la badge visible.
+  .happy-hour-badge {
+    display: block; 
+  }
+
+  /*
+  OPCIONAL: Si quieres que el borde lateral cambie cuando es Happy Hour,
+  añade un estilo aquí. Por ejemplo:
+  border-left-color: #FF9800; 
+  */
+}

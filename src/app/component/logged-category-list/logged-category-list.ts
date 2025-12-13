@@ -25,6 +25,14 @@ export class LoggedCategoryList {
   router = inject(Router)
   auth = inject(AuthService)
 
+  ngOnInit (){
+  if(this.myRestaurant.id){
+     this.productService.getProductsByUserId(this.myRestaurant.id)
+  }
+  console.log(this.productService.products)
+  }
+
+
   async openDeleteModal(){
     
     Swal.fire({

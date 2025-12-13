@@ -1,4 +1,9 @@
 
-<div class="restaurant-card-item" [routerLink]="['/menu', idUser(), 'product', products().id]">
+<div class="restaurant-card-item" [routerLink]="['/menu', idUser(), 'product', products().id]"
+[class.featured-product]="products().featured"
+[class.happy-hour-product]="products().hasHappyHour">
+
+<span class="happy-hour-badge">🍹 Happy Hour</span>
+<span class="featured-badge">✨ Destacado</span>
     <p class="restaurant-name-text">{{products().name}}</p>
 </div>

@@ -34,6 +34,7 @@ export class ProductService {
         });
         if (!res.ok) return undefined;
         const resProducts: Product[] = await res.json();
+        this.products = resProducts
         return resProducts;
   }
 
