@@ -2,6 +2,8 @@ import { Component, input, inject } from '@angular/core';
 import { Product } from '../../interfaces/product';
 import { ProductService } from '../../services/product-service';
 import { Router, RouterLink } from '@angular/router';
+import Swal from 'sweetalert2';
+
 @Component({
   selector: 'app-logged-product-details',
   imports: [RouterLink],
@@ -12,13 +14,13 @@ export class LoggedProductDetails {
 
   IdProduct = input.required<string>()
   productService = inject(ProductService)
+  
   producto : Product | undefined;
   router = inject(Router);
   cargandoProducto = false
 
    async ngOnInit() {
     if(this.IdProduct()){
-      // Si encuentro el contacto en el array del servicio lo uso, mientras tanto cargo el contacto del backend por si hubo cambios en el contacto
       this.producto = this.productService.products.find(producto => producto.id.toString() === this.IdProduct());
       if(!this.producto) this.cargandoProducto = true;
       const res = await this.productService.getProductById(this.IdProduct());
@@ -27,4 +29,23 @@ export class LoggedProductDetails {
     }
   }
 
+  async openDeleteModal(){
+      
+        Swal.fire({
+        title: "¿Desea borrar la Categoria?",
+        showDenyButton: true,
+        showCancelButton: true,
+        showConfirmButton: false,
+        cancelButtonText: "Cancelar",
+        denyButtonText: `Eliminar definitivamente`
+      }).then((result) => {
+        if (result.isDenied) { 
+
+         const idToDelete = this.producto!.id;
+         this.productService.deleteProduct(idToDelete);
+         this.router.navigate(["/admin/myrestaurant"])
+        }
+      });
+      
+    }
 }

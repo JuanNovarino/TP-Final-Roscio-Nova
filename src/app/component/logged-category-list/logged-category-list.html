@@ -17,7 +17,7 @@
   </div>
 
   <div class="products-grid">
-    @for (product of productList; track $index) { 
+    @for (product of this.productService.products; track $index) { 
       @if (category().id === product.categoryId){
         <div class="grid-item">
           <app-logged-product-list [product]="product"></app-logged-product-list>

@@ -25,7 +25,7 @@ export class CategoryService {
           if (!res.ok) return undefined;
           const resProducts: Category[] = await res.json();
         
-          this.categories[userId] = resProducts //actualizar el record con las categorias geteadas
+          this.categories[userId] = resProducts 
           return resProducts
     }
 
@@ -46,9 +46,9 @@ export class CategoryService {
             if(currentUserId !== undefined){
                 if(this.categories[currentUserId]){
                   
-                  this.categories[currentUserId].push(createdCategory); //si ya tiene categorias, le suma la nueva
+                  this.categories[currentUserId].push(createdCategory); 
                 } else {
-                  this.categories[currentUserId] = [createdCategory]; // sino tiene ninguna y es la primera la crea 
+                  this.categories[currentUserId] = [createdCategory];  
                 }
             }
             return createdCategory;
@@ -91,7 +91,7 @@ export class CategoryService {
 
           this.categories[currentUserId] = this.categories[currentUserId].map(
             category => {
-              if (category.id == editedCategory.id) { // Usamos == para seguridad de tipos
+              if (category.id == editedCategory.id) { 
                         return editedCategory; 
                     }
                     return category;

@@ -24,21 +24,8 @@ export class LoggedCategoryList {
   categoryService = inject(CategoryService)
   router = inject(Router)
   auth = inject(AuthService)
-  productList : Product[] | undefined
-  
-    
-    async ngOnInit() {
-      if (this.myRestaurant.id != undefined) {
-         const product = await this.productService.getProductsByUserId(this.myRestaurant.id)
-      
-  
-      if (product) {
-            this.productList = product;
-        }
-      }
-    }
 
-     async openDeleteModal(){
+  async openDeleteModal(){
     
     Swal.fire({
       title: "¿Desea borrar la Categoria?",
@@ -48,11 +35,11 @@ export class LoggedCategoryList {
       cancelButtonText: "Cancelar",
       denyButtonText: `Eliminar definitivamente`
     }).then((result) => {
-      if (result.isDenied) { //Reviso que haya clickeado en el botón rojo.
+      if (result.isDenied) { 
        this.categoryService.deleteCategory(this.category().id);
       }
     });
-    await this.myRestaurant.ngOnInit();
+   // await this.myRestaurant.ngOnInit();
   }
 
 }

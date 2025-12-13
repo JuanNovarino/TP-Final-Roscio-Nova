@@ -32,10 +32,10 @@ export class NewEditProduct {
   availableCategories: Category[] | undefined;
   
    async ngOnInit() {
+     const idProductString = this.route.snapshot.paramMap.get('idProduct');
     this.isLoading = true;
     
     
-    const idProductString = this.route.snapshot.paramMap.get('idProduct');
     if (idProductString) {
       this.idProduct = parseInt(idProductString, 10);
     }
@@ -129,11 +129,11 @@ export class NewEditProduct {
     let res;
     
     if (this.idProduct) {
-      // MODO EDICIÓN (PUT)
+    
       const productToEdit: Product = { ...productData, id: this.idProduct };
       res = await this.productService.editProduct(productToEdit);
     } else {
-      // MODO CREACIÓN (POST)
+      
       res = await this.productService.createProduct(productData);
     }
 
@@ -144,7 +144,7 @@ export class NewEditProduct {
       return;
     }
 
-    // Navegar a la lista de productos
+    
     this.router.navigate(["/admin/myrestaurant"]);
   }
 

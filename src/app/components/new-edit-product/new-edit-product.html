@@ -10,7 +10,7 @@
 
     <form (ngSubmit)="handleFormSubmission(newProductForm)" #newProductForm="ngForm">
       
-      <!-- NOMBRE -->
+      
       <div class="form-group">
         <label for="name" class="form-label">Nombre del Plato*</label>
         <input id="name" name="name" type="text" ngModel required minlength="2" maxlength="100" #name="ngModel" class="form-input">
@@ -19,10 +19,9 @@
         }
       </div>
 
-      <!-- DESCRIPCIÓN -->
       <div class="form-group">
         <label for="description" class="form-label">Descripción*</label>
-        <textarea id="description" name="description" ngModel required minlength="5" #description="ngModel" class="form-input"></textarea>
+        <input id="description" name="description" ngModel required minlength="5" #description="ngModel" class="form-input">
         @if (description.invalid && description.dirty) {
           <span class="error-message">La descripción es obligatoria (mínimo 5 caracteres).</span>
         }
@@ -39,16 +38,7 @@
             <span class="error-message">El precio es obligatorio y debe ser positivo.</span>
           }
         </div>
-        
-        <!-- ESPACIO VACÍO O RELLENO (Podrías usarlo para Discount o RecommendedFor si los quieres arriba) -->
-        <div class="form-group">
-           <!-- Muestra la categoría a la que pertenece el producto si ya fue asignada -->
-           @if (idCategoryRoute) {
-             <p class="form-label text-sm font-bold">Categoría asignada:</p>
-             <!-- Si tuvieras el objeto categoría, podrías mostrar el nombre. Aquí solo mostramos el ID -->
-             <p class="text-lg font-medium text-green-700">{{ idCategoryRoute }}</p>
-           }
-        </div>
+       
       </div>
 
       <!-- ETIQUETAS (LABELS) -->

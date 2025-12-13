@@ -88,7 +88,7 @@ export class ProductService {
                 Authorization: "Bearer " + this.authService.getToken(),
             },
         });
-        if (!res.ok) return false;
+        if (!res.ok) return false;         
         this.products = this.products.filter(product => product.id !== id);
         return true;
   }
