@@ -3,18 +3,20 @@
   <div class="category-header">
     <h3 class="category-name">{{ category().name }}</h3>
 
-    <div class="category-actions">
+    <div class="category-actions-left"> 
       <a [routerLink]="['/admin/myrestaurant', category().id, 'edit']" class="btn-action btn-edit">
-        Editar
+        Editar Categoría
       </a>
       
       <button (click)="openDeleteModal()" class="btn-action btn-delete">
-        Borrar
+        Borrar Categoría
       </button>
-
-      <a [routerLink]="['/admin/myrestaurant', category().id, 'newproduct']" class="btn-action btn-edit">Crear Producto</a>
     </div>
+      <div class="category-actions-right"> 
+        <a [routerLink]="['/admin/myrestaurant', category().id, 'newproduct']" class="btn-action btn-edit">Crear Producto</a>
+      </div>
   </div>
+  
 
   <div class="products-grid">
     @for (product of this.productService.products; track $index) { 

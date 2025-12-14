@@ -4,6 +4,13 @@
     <span class="happy-hour-badge">🍹 Happy Hour</span>
     <span class="featured-badge">✨ Destacado</span> 
     <span  class="restaurant-name-text">{{ product().name }}</span>
-    <span class="product-price">$ {{ product().price }}</span>
+    <div class="prices-wrapper">
+        @if(product().discount > 0) {
+            <span class="product-price">${{product().price}}</span>
+             <span class="final-price">${{product().price - (product().price * product().discount / 100) | currency: 'USD'}}</span>
+        } @else {
+                 <span class="final-price">${{product().price}}</span>
+                }
+    </div>
     
 </div>

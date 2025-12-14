@@ -32,7 +32,7 @@
                     <div class="prices-wrapper">
                          @if(producto!.discount > 0) {
                             <span class="original-price">${{producto!.price}}</span>
-                            <span class="final-price">${{producto!.price - (producto!.price * producto!.discount / 100)}}</span>
+                            <span class="final-price">{{producto!.price - (producto!.price * producto!.discount / 100) | currency: 'USD'}}</span>
                         } @else {
                                  <span class="final-price">${{producto!.price}}</span>
                                  }

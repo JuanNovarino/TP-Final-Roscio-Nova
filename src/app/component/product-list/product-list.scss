@@ -107,3 +107,38 @@
     margin-top: 5px;          /* Un poco de aire arriba */
     letter-spacing: 0.5px;    /* Separación sutil de letras para legibilidad */
 }
+/* Estilos para el contenedor de precios (prices-wrapper) */
+.prices-wrapper {
+  display: flex;        /* Coloca el precio viejo y el nuevo en fila */
+  align-items: center;
+  gap: 8px;             /* Espacio entre ambos precios */
+  margin-top: 5px;
+}
+
+/* Estilo para el Precio Viejo (Original) */
+.product-price {
+  /* REQUISITO: Tachado */
+  text-decoration: line-through; 
+  
+  /* REQUISITO: Gris */
+  color: #757575; /* Gris medio, sutil */
+  
+  font-size: 0.9rem; /* Chiquito, porque ya no es relevante */
+  font-weight: 400;
+}
+
+/* Estilo para el Precio Final (Nuevo precio o precio regular) */
+.final-price {
+  /* REQUISITO: Verde */
+  color: #2e7d32; /* Tu verde corporativo */
+  
+  font-size: 1.2rem; /* Grande, para que destaque */
+  font-weight: 800; /* Súper negrita */
+  letter-spacing: -0.5px;
+}
+
+/* Opcional: Si querés que el nombre quede un poco más arriba que los precios */
+.restaurant-name-text {
+  display: block;
+  margin-bottom: 5px;
+}

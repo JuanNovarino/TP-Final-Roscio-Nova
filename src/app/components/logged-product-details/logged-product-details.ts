@@ -3,10 +3,11 @@ import { Product } from '../../interfaces/product';
 import { ProductService } from '../../services/product-service';
 import { Router, RouterLink } from '@angular/router';
 import Swal from 'sweetalert2';
+import { CurrencyPipe,CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-logged-product-details',
-  imports: [RouterLink],
+  imports: [RouterLink,CurrencyPipe,CommonModule],
   templateUrl: './logged-product-details.html',
   styleUrl: './logged-product-details.scss',
 })

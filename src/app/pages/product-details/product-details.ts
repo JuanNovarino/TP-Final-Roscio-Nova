@@ -2,10 +2,11 @@ import { Component,input,inject } from '@angular/core';
 import { Product } from '../../interfaces/product';
 import { ProductService } from '../../services/product-service';
 import { Router,RouterLink } from '@angular/router';
+import { CurrencyPipe,CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-product-details',
-  imports: [RouterLink],
+  imports: [RouterLink,CurrencyPipe,CommonModule],
   templateUrl: './product-details.html',
   styleUrl: './product-details.scss',
 })
