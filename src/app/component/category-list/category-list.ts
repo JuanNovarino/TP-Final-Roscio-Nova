@@ -21,6 +21,16 @@ export class CategoryList {
   allProducts = input<Product[] | undefined>();
   idUser = input.required<number>();
 
+  private sortProductsByFeatured(a: Product, b: Product): number {
+    if (a.featured && !b.featured) {
+        return -1;
+    }
+    if (!a.featured && b.featured) {
+        return 1;
+    }
+    return 0;
+  }
+
   
   filterProducts(): Product[] {
     
@@ -33,7 +43,8 @@ export class CategoryList {
     }
 
     
-    return products.filter(product => product.categoryId === categoryId);
+    const filteredProducts = products.filter(product => product.categoryId === categoryId);
+    return filteredProducts.slice().sort(this.sortProductsByFeatured);
   }
 
 }
