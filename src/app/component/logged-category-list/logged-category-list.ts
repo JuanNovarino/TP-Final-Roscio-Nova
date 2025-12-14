@@ -25,6 +25,31 @@ export class LoggedCategoryList {
   router = inject(Router)
   auth = inject(AuthService)
 
+   private sortProductsByFeatured(a: Product, b: Product): number {
+    if (a.featured && !b.featured) {
+        return -1;
+    }
+    if (!a.featured && b.featured) {
+        return 1;
+    }
+    return 0;
+  }
+
+  filterProducts(): Product[] {
+    // Aquí usamos this.productService.products para obtener la lista
+    const products = this.productService.products; 
+    const categoryId = this.category().id;
+
+    if (!products || products.length === 0 || !categoryId) {
+      return [];
+    }
+
+    // 1. Filtrar los productos por el ID de la categoría actual
+    const filteredProducts = products.filter((product: Product) => product.categoryId === categoryId);
+
+    return filteredProducts.slice().sort(this.sortProductsByFeatured);
+  }
+
   ngOnInit (){
   if(this.myRestaurant.id){
      this.productService.getProductsByUserId(this.myRestaurant.id)

@@ -14,6 +14,8 @@ import { NewEditCategory } from './components/new-edit-category/new-edit-categor
 import { LoggedProductDetails } from './components/logged-product-details/logged-product-details';
 import { ProductDetails } from './pages/product-details/product-details';
 import { NewEditProduct } from './components/new-edit-product/new-edit-product';
+import { onlyLoggedUserGuard } from './guards/only-logged-user-guard';
+import { onlyPublicUserGuard } from './guards/only-public-user-guard';
 
 export const routes: Routes = [
     {
@@ -32,17 +34,19 @@ export const routes: Routes = [
     {
       path: "login",
       component : LoginPage,
+      canActivate: [onlyPublicUserGuard]
     },
     {
       path : "register",
       component : RegisterPage,
+      canActivate: [onlyPublicUserGuard]
     },
     
 
     {
       path: "admin",
       component: AdminLayout,
-      
+      canActivate: [onlyLoggedUserGuard],
        children: [
            
             { path: "", redirectTo: "myrestaurant", pathMatch: "full" }, 

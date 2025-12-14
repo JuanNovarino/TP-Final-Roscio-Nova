@@ -8,13 +8,13 @@
     <p class="restaurant-name-text">{{products().name}}</p>
    <div class="prices-wrapper">
     @if(products().discount > 0) {
-        <span class="product-price">${{products().price}}</span>
+        <span class="product-price">{{products().price | currency: 'USD'}}</span>
         <span class="final-price">
             {{ products().price - (products().price * products().discount / 100) | currency: 'USD' }}
         </span>
     } @else {
         <span class="final-price">
-            {{ products().price  }}
+            {{ products().price | currency: 'USD' }}
         </span>
     }
 </div>

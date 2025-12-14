@@ -19,12 +19,12 @@
   
 
   <div class="products-grid">
-    @for (product of this.productService.products; track $index) { 
-      @if (category().id === product.categoryId){
+    @for (product of filterProducts(); track product.id) { 
+      
         <div class="grid-item">
           <app-logged-product-list [product]="product"></app-logged-product-list>
         </div>
-      }     
+       
     }  
   </div>
 </div>
