@@ -1,25 +1,26 @@
 <div class="menu-container">
+    
+<div class="menu-header">
+    <a routerLink="/" class="btn-back">
+        <span class="icon-arrow">⬅</span> Volver
+    </a>
     <h2>Menú del Restaurante</h2>
-
+</div>
+    <h3>Listado de Categorías:</h3>
     
-
     
-
-            <h3>Listado de Categorías:</h3>
+    @for (category of categoryList; track category.id) {
+        <div>
             
+            <app-category-list 
+                [category]="category" 
+                [allProducts]="allProducts"
+                [idUser]="id()"> 
+            </app-category-list> 
             
-            @for (category of categoryList; track category.id) {
-                <div>
-                    
-                    <app-category-list 
-                        [category]="category" 
-                        [allProducts]="allProducts"
-                        [idUser]="id()"> 
-                    </app-category-list> 
-                    
-                </div>
-            }
         </div>
+    }
+</div>
         
 
     
