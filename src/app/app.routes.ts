@@ -19,16 +19,20 @@ import { onlyPublicUserGuard } from './guards/only-public-user-guard';
 
 export const routes: Routes = [
     {
+
         path: "",
         component: Home,
-    },
+        canActivate: [onlyPublicUserGuard]
+      },
     {
       path: "menu/:idUser",
       component: Menu,
+      canActivate: [onlyPublicUserGuard]
     },
     {
       path: "menu/:idUser/product/:IdProduct",
       component: ProductDetails,
+      canActivate: [onlyPublicUserGuard]
     },
  
     {
@@ -46,7 +50,7 @@ export const routes: Routes = [
     {
       path: "admin",
       component: AdminLayout,
-      canActivate: [onlyLoggedUserGuard],
+      canActivateChild: [onlyLoggedUserGuard],
        children: [
            
             { path: "", redirectTo: "myrestaurant", pathMatch: "full" }, 
