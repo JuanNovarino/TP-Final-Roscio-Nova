@@ -38,12 +38,12 @@ export const routes: Routes = [
     {
       path: "login",
       component : LoginPage,
-      canActivate: [onlyPublicUserGuard]
+      //canActivate: [onlyPublicUserGuard]
     },
     {
       path : "register",
       component : RegisterPage,
-      canActivate: [onlyPublicUserGuard]
+      //canActivate: [onlyPublicUserGuard]
     },
     
 
