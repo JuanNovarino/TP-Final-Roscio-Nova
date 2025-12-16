@@ -9,6 +9,7 @@ import { CurrencyPipe,CommonModule } from '@angular/common';
   imports: [RouterLink,CurrencyPipe,CommonModule],
   templateUrl: './product-details.html',
   styleUrl: './product-details.scss',
+  
 })
 export class ProductDetails {
 
