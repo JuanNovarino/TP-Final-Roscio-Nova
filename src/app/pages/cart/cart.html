@@ -1,15 +1,43 @@
-<p>Carrito</p>
-@for (item of cartservice.items; track $index) {
-    <p>{{item.name}}</p>
-    @if(item.discount > 0 ){
-        <p>{{item.price}}</p>
-        <P>{{item.price - (item.price * item.discount / 100)}}</P>
-    }
-    @else {
-         <p>{{item.price}}</p>
-    }
-   
-    <button (click)="cartservice.deleteCart(item)">Eliminar Producto</button>
-}
-<p>Total</p>
-<p>{{ finalprice() }}</p>   
+<div class="cart-page-container">
+    
+    <a routerLink="/" class="btn-back">
+        <span>Volver</span> 
+    </a>
+
+    <h1 class="cart-title">Tu Carrito de Compras</h1>
+
+    <div class="cart-layout">
+        
+        <div class="cart-items-list white-background">
+            @for (item of cartservice.items; track $index) {
+                <div class="cart-item">
+                    <p class="item-name">{{item.name}}</p>
+                    
+                    <div class="item-price-info">
+                        @if(item.discount > 0 ){
+                            <p class="price-original-tachado">${{item.price}}</p>
+                            <p class="price-final-green">${{item.price - (item.price * item.discount / 100)}}</p>
+                        }
+                        @else {
+                            <p class="price-final-green">${{item.price}}</p>
+                        }
+                    </div>
+                    
+                    <button (click)="cartservice.deleteCart(item)" class="btn-delete-item">
+                        Eliminar Producto
+                    </button>
+                </div>
+            }
+        </div>
+
+        <div class="cart-summary yellow-background-content">
+            <h2 class="summary-title">Resumen del Pedido</h2>
+            
+            <div class="summary-line">
+                <p>Total:</p>
+                <p class="price-total-green">${{ finalprice() }}</p>
+            </div>
+            
+        </div>
+    </div>
+</div>
