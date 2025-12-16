@@ -1,15 +1,4 @@
-<!--div>
-    <button>
-        {{ category().name }}
-    </button>
-    <div [id]="'category-' + category().id">
-        @for (products of productService.products[this.menuService.id()]; track $index) {
-        @if (products.categoryId === category().id) {
-        <app-products-list [products]="products"></app-products-list>
-        }
-        }
-    </div>
-</div!-->
+
 <div>
     
     <h3 class="font-bold text-xl mb-2">{{ category().name }}</h3> 
@@ -20,7 +9,7 @@
     
         @for (product of filterProducts(); track product.id) {
         
-            <app-product-list [products]="product" [idUser]="idUser()"></app-product-list>
+            <app-product-list [products]="product" [restaurantSlug]="restaurantSlug()" [idUser]="idUser()"></app-product-list>
             
         }
         

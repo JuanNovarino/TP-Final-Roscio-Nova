@@ -19,6 +19,7 @@ export class ProductDetails {
   producto : Product | undefined;
   router = inject(Router);
   cargandoProducto = false
+  restaurantNameSlug = input.required<string>();
 
    async ngOnInit() {
     if(this.IdProduct()){

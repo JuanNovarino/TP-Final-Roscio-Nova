@@ -8,6 +8,7 @@ import { ProductList } from '../product-list/product-list';
 
 
 
+
 @Component({
   selector: 'app-category-list',
   imports: [ProductList],
@@ -15,7 +16,8 @@ import { ProductList } from '../product-list/product-list';
   styleUrl: './category-list.scss',
 })
 export class CategoryList {
-
+  
+  restaurantSlug = input.required<string>();
   category = input.required<Category>();
  
   allProducts = input<Product[] | undefined>();

@@ -14,4 +14,5 @@ export class ProductList {
 
 products = input.required<Product>();
 idUser = input.required<number>();
+restaurantSlug = input.required<string>();
 }

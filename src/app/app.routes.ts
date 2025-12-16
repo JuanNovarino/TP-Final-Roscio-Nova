@@ -30,7 +30,7 @@ export const routes: Routes = [
       canActivate: [onlyPublicUserGuard]
     },
     {
-      path: "menu/:idUser/product/:IdProduct",
+      path: "menu/:idUser/:restaurantNameSlug/product/:IdProduct", 
       component: ProductDetails,
       canActivate: [onlyPublicUserGuard]
     },

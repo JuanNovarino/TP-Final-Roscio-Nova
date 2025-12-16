@@ -1,5 +1,5 @@
 
-<div class="restaurant-card-item" [routerLink]="['/menu', idUser(), 'product', products().id]"
+<div class="restaurant-card-item" [routerLink]="['/menu', idUser(), restaurantSlug(), 'product', products().id]"
 [class.featured-product]="products().featured"
 [class.happy-hour-product]="products().hasHappyHour">
 

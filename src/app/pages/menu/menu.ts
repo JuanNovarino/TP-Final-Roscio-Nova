@@ -22,7 +22,7 @@ export class Menu implements OnInit {
   route = inject(ActivatedRoute);
   
   id = signal<number>(0);
-
+  restaurantSlug = signal<string>('');
   categoryList : Category[] | undefined
   allProducts: Product[] | undefined;
   loadingCategories = true;
@@ -34,10 +34,14 @@ export class Menu implements OnInit {
     
     this.loadingCategories = true;
 
+    
+  
+    const restaurantNameSlug = this.route.snapshot.paramMap.get('restaurantNameSlug');
+
     const idUserString = this.route.snapshot.paramMap.get('idUser');
 
     
-    if (!idUserString) {
+    if (!idUserString  || !restaurantNameSlug) {
       this.loadingCategories = false;
       return; 
     }
@@ -45,6 +49,7 @@ export class Menu implements OnInit {
     const restaurantid = parseInt(idUserString, 10);
 
     this.id.set(restaurantid);
+    this.restaurantSlug.set(restaurantNameSlug);
     
     const categoriesData = await this.categoriesService.getCategoriesByUserId(restaurantid);
 
