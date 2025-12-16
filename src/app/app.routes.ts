@@ -16,12 +16,17 @@ import { ProductDetails } from './pages/product-details/product-details';
 import { NewEditProduct } from './components/new-edit-product/new-edit-product';
 import { onlyLoggedUserGuard } from './guards/only-logged-user-guard';
 import { onlyPublicUserGuard } from './guards/only-public-user-guard';
+import { Cart } from './pages/cart/cart';
 
 export const routes: Routes = [
     {
-
         path: "",
         component: Home,
+        canActivate: [onlyPublicUserGuard]
+      },
+      {
+        path: "cart",
+        component: Cart,
         canActivate: [onlyPublicUserGuard]
       },
     {

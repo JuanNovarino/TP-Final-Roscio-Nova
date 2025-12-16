@@ -1,8 +1,9 @@
-import { Component,input } from '@angular/core';
+import { Component,input,inject } from '@angular/core';
 import { CategoryList } from '../category-list/category-list';
 import { Product } from '../../interfaces/product';
 import { RouterLink } from '@angular/router';
 import { CurrencyPipe, CommonModule } from '@angular/common';
+import { CartService } from '../../services/cart-service';
 
 @Component({
   selector: 'app-product-list',
@@ -11,8 +12,13 @@ import { CurrencyPipe, CommonModule } from '@angular/common';
   styleUrl: './product-list.scss',
 })
 export class ProductList {
-
+cartservice = inject (CartService)
 products = input.required<Product>();
 idUser = input.required<number>();
 restaurantSlug = input.required<string>();
+
+addcart(product:Product){
+  this.cartservice.uploadCart(product)
+  console.log(this.cartservice.items)
+}
 }

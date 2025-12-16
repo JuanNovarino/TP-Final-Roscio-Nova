@@ -1,1 +1,15 @@
-<p>cart works!</p>
+<p>Carrito</p>
+@for (item of cartservice.items; track $index) {
+    <p>{{item.name}}</p>
+    @if(item.discount > 0 ){
+        <p>{{item.price}}</p>
+        <P>{{item.price - (item.price * item.discount / 100)}}</P>
+    }
+    @else {
+         <p>{{item.price}}</p>
+    }
+   
+    <button (click)="cartservice.deleteCart(item)">Eliminar Producto</button>
+}
+<p>Total</p>
+<p>{{ finalprice() }}</p>   
