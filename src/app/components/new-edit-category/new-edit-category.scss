@@ -8,23 +8,21 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 85vh; /* Ocupa casi toda la altura disponible */
+  min-height: 85vh; 
   padding: 20px;
   box-sizing: border-box;
 }
 
-/* --- Tarjeta Principal --- */
 .form-card {
   background-color: #ffffff;
   width: 100%;
-  max-width: 450px; /* Ancho máximo para que no se estire demasiado */
+  max-width: 450px; 
   padding: 2.5rem;
   border-radius: 16px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08); /* Sombra suave y elegante */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08); 
   text-align: center;
 }
 
-/* --- Encabezado --- */
 .card-header {
   margin-bottom: 2rem;
 
@@ -42,7 +40,6 @@
   }
 }
 
-/* --- Inputs y Labels --- */
 .form-group {
   margin-bottom: 1.5rem;
   text-align: left;
@@ -69,7 +66,7 @@
   &:focus {
     outline: none;
     background-color: #fff;
-    border-color: #00B368; /* Verde Lettera */
+    border-color: #00B368; 
     box-shadow: 0 0 0 3px rgba(0, 179, 104, 0.15);
   }
 
@@ -96,7 +93,6 @@
   border: 1px solid #fca5a5;
 }
 
-/* --- Botones --- */
 .form-actions {
   display: flex;
   flex-direction: column;
@@ -108,7 +104,7 @@
   width: 100%;
   padding: 0.85rem;
   border: none;
-  border-radius: 50px; /* Botones redondeados estilo app moderna */
+  border-radius: 50px; 
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;

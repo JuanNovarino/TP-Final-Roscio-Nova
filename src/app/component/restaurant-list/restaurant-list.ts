@@ -14,8 +14,8 @@ export class RestaurantList {
 
 private slugify(text: string): string {
         return text
-            .toLowerCase() 
-            .trim()
+            .toLowerCase() //hace todas las letras minuscula
+            .trim() 
             .replace(/[^\w\s-]/g, '') // Elimina caracteres no deseados
             .replace(/[\s_-]+/g, '-')  // Reemplaza espacios y guiones con un solo guion
             .replace(/^-+|-+$/g, '');  // Elimina guiones al principio/final

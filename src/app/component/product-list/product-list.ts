@@ -18,7 +18,10 @@ idUser = input.required<number>();
 restaurantSlug = input.required<string>();
 
 addcart(product:Product){
-  this.cartservice.uploadCart(product)
-  console.log(this.cartservice.items)
+  const item : Product = {
+    ...product
+  }
+  this.cartservice.uploadCart(item)
+  
 }
 }

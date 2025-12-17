@@ -36,7 +36,6 @@ export class LoggedCategoryList {
   }
 
   filterProducts(): Product[] {
-    // Aquí usamos this.productService.products para obtener la lista
     const products = this.productService.products; 
     const categoryId = this.category().id;
 
@@ -44,7 +43,6 @@ export class LoggedCategoryList {
       return [];
     }
 
-    // 1. Filtrar los productos por el ID de la categoría actual
     const filteredProducts = products.filter((product: Product) => product.categoryId === categoryId);
 
     return filteredProducts.slice().sort(this.sortProductsByFeatured);
@@ -54,7 +52,7 @@ export class LoggedCategoryList {
   if(this.myRestaurant.id){
      this.productService.getProductsByUserId(this.myRestaurant.id)
   }
-  console.log(this.productService.products)
+  
   }
 
 
@@ -72,7 +70,6 @@ export class LoggedCategoryList {
        this.categoryService.deleteCategory(this.category().id);
       }
     });
-   // await this.myRestaurant.ngOnInit();
   }
 
 }

@@ -1,10 +1,10 @@
 
 <div>
     
-    <h3 class="font-bold text-xl mb-2">{{ category().name }}</h3> 
+    <h3>{{ category().name }}</h3> 
 
     
-    <div class="product-group mt-4">
+    <div class="product-group ">
         
     
         @for (product of filterProducts(); track product.id) {
@@ -14,7 +14,7 @@
         }
         
         @if (filterProducts().length === 0) {
-            <p class="text-gray-500 italic">Pronto tendremos productos en esta sección.</p>
+            <p class="text-gray">Pronto tendremos productos en esta sección.</p>
         }
     </div>
 </div>

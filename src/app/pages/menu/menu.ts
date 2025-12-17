@@ -72,37 +72,5 @@ export class Menu implements OnInit {
   
   }
 
-    /*const productsData = await this.productsService.getProductsByUserId(restaurantid);
-
-    if (productsData){
-      this.allProducts = productsData;
-    }
-    this.loadingProducts = false;*/
-    
-  
- 
-
-/*categoriesService = inject(CategoryService)
-  authService = inject(AuthService)
-  IdUser = input.required<number>()
-  categoryList : Category[] | undefined
-
-  loadingCategories = true;
-
-   async ngOnInit() {
-    this.loadingCategories = true;
-
-    const restaurantid = this.IdUser()
-
-    const categoriesData = await this.categoriesService.getCategoriesByUserId(restaurantid)
-
-     if (categoriesData) {
-        this.categoryList = categoriesData;
-    }
-    console.log(this.categoryList)
-
-    this.loadingCategories = false;
-   }*/
-
   
 

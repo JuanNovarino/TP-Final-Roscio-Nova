@@ -25,10 +25,10 @@ export class CategoryList {
 
   private sortProductsByFeatured(a: Product, b: Product): number {
     if (a.featured && !b.featured) {
-        return -1;
+        return -1; //si a es favorito y b no va adelante
     }
     if (!a.featured && b.featured) {
-        return 1;
+        return 1; 
     }
     return 0;
   }

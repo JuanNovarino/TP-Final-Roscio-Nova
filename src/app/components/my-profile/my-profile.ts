@@ -10,7 +10,7 @@ import { FormsModule } from '@angular/forms';
   imports: [RouterModule, FormsModule],
   templateUrl: './my-profile.html',
   styleUrl: './my-profile.scss',
-  standalone: true // ??
+  standalone: true 
 })
 export class MyProfile implements OnInit {
 
@@ -18,14 +18,9 @@ export class MyProfile implements OnInit {
   userService = inject(UserService);
   authService = inject(AuthService);
   router = inject(Router);
-
-
-
-
   userProfile: User | undefined;
-  //userEditado: User | undefined; 
   cargandoPerfil: boolean = false;
-  //isEditing: boolean = false;
+  
 
 
   async ngOnInit() {    

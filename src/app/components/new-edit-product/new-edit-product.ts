@@ -76,10 +76,6 @@ export class NewEditProduct {
     this.isLoading = false;
   }
     
-
-
-
-  
   availableLabels: string[] = [
     "Vegan", "Vegetarian", "GlutenFree", "Spicy", "SugarFree", "Kids", "Shareable",
   ];

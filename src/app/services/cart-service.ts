@@ -24,11 +24,6 @@ export class CartService {
     this.saveCart()
   }
  
-  cleanCart() {
-    this.items = []
-    this.saveCart();
-  }
-
   saveCart() {
     localStorage.setItem('carrito', JSON.stringify(this.items))
   }
